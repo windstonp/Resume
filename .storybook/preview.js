@@ -10,6 +10,7 @@ export const parameters = {
   },
   darkMode: {
     dark: { ...themes.dark },
-    light: { ...themes.light}
+    light: { ...themes.light},
+    current: 'dark'
   }
 }
