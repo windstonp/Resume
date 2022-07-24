@@ -2,8 +2,9 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { TextLink } from '.';
-import { theme } from '../../../global/styles/theme';
-import 'jest-styled-components'
+import { theme } from '../../../../global/styles/theme';
+import 'jest-styled-components';
+
 
 const AppProvider: React.FC = ({ children }) => {
   return (

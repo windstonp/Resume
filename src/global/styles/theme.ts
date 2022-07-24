@@ -17,12 +17,12 @@ export const theme = {
       bold: 800,
     },
     sizes: {
-      small: '1.4rem',
-      medium: '1.8rem',
-      large: '2rem',
-      xlarge: '2.5rem',
-      xxlarge: '3rem',
-      huge: '5.2rem',
+      small: '1rem',
+      medium: '1.2rem',
+      large: '1.4rem',
+      xlarge: '1.8rem',
+      xxlarge: '2.25rem',
+      huge: '3rem',
     },
     heights: {
       xsmall: '14px',

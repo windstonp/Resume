@@ -1,9 +1,10 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { ButtonLink } from '.';
-import { theme } from '../../../global/styles/theme';
+import { theme } from '../../../../global/styles/theme';
 import { ThemeProvider } from 'styled-components';
-import 'jest-styled-components'
+import 'jest-styled-components';
+
 
 const AppProvider: React.FC = ({children}) => {
   return(

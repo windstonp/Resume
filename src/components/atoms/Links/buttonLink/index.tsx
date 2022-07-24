@@ -15,6 +15,7 @@ export function ButtonLink({ children, href = '#', ...rest }: ButtonLinkProps) {
         isActive={isActive}
         onMouseOver={handleMouseEvent}
         onMouseLeave={handleMouseEvent}
+        data-testid="buttonLinkComponent"
         {...rest}
       >
         {children}

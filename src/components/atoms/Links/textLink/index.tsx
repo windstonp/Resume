@@ -7,6 +7,7 @@ export function TextLink({color, href, children, ...rest}: ButtonLinkProps) {
   return(
     <Link href={`${href}`} passHref>
       <Container
+        data-testid="textLinkComponent"
         color={color}
         {...rest}
       >
