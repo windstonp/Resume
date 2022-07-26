@@ -12,5 +12,10 @@ export const Container = styled.a<ContainerProps>`
     font-size: ${theme.fonts.sizes.medium};
     text-decoration: none;
     text-align: center;
+
+    &:hover{
+      color: ${theme.colors.primary};
+      transition: ${theme.transition.default}
+    }
   `}
 `; 

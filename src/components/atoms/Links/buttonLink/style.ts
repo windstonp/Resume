@@ -10,7 +10,7 @@ export const Container = styled.a<buttonProps>`
     margin: 0 auto;
     font-family: ${theme.fonts.family};
     font-size: ${theme.fonts.sizes.medium};
-    font-weight: ${theme.fonts.weight.normal};
+    font-weight: ${theme.fonts.weight.semiBolds};
     background-color: ${isActive ? theme.colors.background[100] : theme.colors.primary};
     color:  ${isActive ? theme.colors.primary: theme.colors.background[100]};
     padding: 8px 32px;
