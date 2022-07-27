@@ -1,17 +1,10 @@
 import styled from "styled-components"
 
-export const Container = styled.div`
+export const Container = styled.section`
   display: flex;
   position: relative;
   flex-direction: column;
-  padding: 0 100px;
   width: 100%;
-
-
-  @media (max-width: 768px) {
-    padding: 0 25px;
-  }
-
   
 `
 export const Content = styled.div`

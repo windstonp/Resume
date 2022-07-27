@@ -6,7 +6,8 @@ type buttonProps = {
 
 export const Container = styled.a<buttonProps>`
   ${({ theme, isActive }) => css`
-    display: inline-block;
+    display: block;
+    width: 200px;
     margin: 0 auto;
     font-family: ${theme.fonts.family};
     font-size: ${theme.fonts.sizes.medium};

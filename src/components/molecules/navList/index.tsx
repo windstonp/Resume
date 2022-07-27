@@ -1,4 +1,3 @@
-import React from "react";
 import { ButtonLink } from "../../atoms/Links/buttonLink";
 import { TextLink } from "../../atoms/Links/textLink";
 import { Container, ContainerOption } from "./style";

@@ -1,14 +1,16 @@
 import type { NextPage } from 'next'
-import { ExpertiseSection } from '../components/organisms/expertiseSection'
-import { HomePresentation } from '../components/organisms/homePresentation'
-import { ReasonsToWorkSection } from '../components/organisms/reasonToWorkSection'
+import Head from 'next/head';
+import {HomeTemplate} from '../templates/HomeTemplate';
 
 const Home: NextPage = () => {
   return (
     <>
-      <HomePresentation/>
-      <ReasonsToWorkSection/>
-      <ExpertiseSection />
+      <Head>
+        <title>
+          J.Alves
+        </title>
+      </Head>
+      <HomeTemplate />
     </>
   )
 }

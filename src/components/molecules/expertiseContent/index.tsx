@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import { Subtitle } from "../../atoms/Headings/subtitle";
 import { Text } from "../../atoms/Headings/text";
 import { Container } from "./style";

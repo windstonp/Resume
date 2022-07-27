@@ -1,4 +1,3 @@
-import React from "react";
 import { LogoText } from "../../molecules/logoText";
 import { NavList } from "../../molecules/navList";
 import { Container, Nav } from "./style";

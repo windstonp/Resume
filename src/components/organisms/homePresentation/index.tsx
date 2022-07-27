@@ -1,4 +1,3 @@
-import React from 'react';
 import { HomePresentationContent } from '../../molecules/homePresentationContent';
 import { Container } from './style';
 

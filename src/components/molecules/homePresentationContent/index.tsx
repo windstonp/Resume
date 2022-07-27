@@ -1,4 +1,3 @@
-import React from "react";
 import { Subtitle } from "../../atoms/Headings/subtitle";
 import { Text } from "../../atoms/Headings/text";
 import { Title } from "../../atoms/Headings/title";
@@ -17,7 +16,7 @@ export function HomePresentationContent(){
       <Text>
         Over the past 4 years, I have worked with large companies and startups, helping them to create their innovative websites with unique and innovative features.
       </Text>
-      <ButtonLink>
+      <ButtonLink href="/contact">
         Contact me!
       </ButtonLink>
     </Container>

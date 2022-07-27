@@ -1,4 +1,3 @@
-import React from "react";
 import { Title } from "../../atoms/Headings/title";
 import { ReasonToWorkContent } from "../../molecules/reasonToWorkContent";
 import { Container, Content } from "./style";
