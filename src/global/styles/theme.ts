@@ -5,7 +5,7 @@ export const theme = {
     tertiary: '#8B949E',
     background: {
       50: '#181818',
-      100: '#202020'
+      100: '#252525'
     },
   },
   fonts:{
@@ -13,15 +13,14 @@ export const theme = {
     weight: {
       light: 300,
       normal: 400,
-      semiBolds: 600,
+      semiBold: 600,
       bold: 800,
     },
     sizes: {
       small: '1rem',
       medium: '1.2rem',
-      large: '1.4rem',
-      xlarge: '1.8rem',
-      xxlarge: '2.25rem',
+      large: '1.8rem',
+      xlarge: '2rem',
       huge: '3rem',
     },
     heights: {

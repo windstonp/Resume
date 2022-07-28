@@ -9,6 +9,6 @@ export const Container = styled.h1<ContainerProps>`
     color: ${color ? color : theme.colors.primary };
     font-family: ${theme.fonts.family};
     font-weight: ${theme.fonts.weight.bold};
-    font-size: ${theme.fonts.sizes.huge};
+    font-size: ${theme.fonts.sizes.xlarge};
   `}
 `; 

@@ -5,7 +5,7 @@ export const Container = styled.a`
     font-family: ${theme.fonts.family};
     color: ${theme.colors.secondary};
     font-weight: ${theme.fonts.weight.bold};
-    font-size: ${theme.fonts.sizes.xxlarge};
+    font-size: ${theme.fonts.sizes.xlarge};
     text-decoration: none;
   `}
 `;

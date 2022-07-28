@@ -9,3 +9,6 @@ export const Container = styled.div`
     max-width: 80%;
   }
 `
+export const ButtonContainer = styled.div`
+  display: flex;
+`

@@ -2,7 +2,7 @@ import { Subtitle } from "../../atoms/Headings/subtitle";
 import { Text } from "../../atoms/Headings/text";
 import { Title } from "../../atoms/Headings/title";
 import { ButtonLink } from "../../atoms/Links/buttonLink";
-import { Container } from "./style";
+import { ButtonContainer, Container } from "./style";
 
 export function HomePresentationContent(){
   return(
@@ -16,9 +16,11 @@ export function HomePresentationContent(){
       <Text>
         Over the past 4 years, I have worked with large companies and startups, helping them to create their innovative websites with unique and innovative features.
       </Text>
-      <ButtonLink href="/contact">
-        Contact me!
-      </ButtonLink>
+      <ButtonContainer>
+        <ButtonLink href="/contact">
+          Contact me!
+        </ButtonLink>
+      </ButtonContainer>
     </Container>
   )
 }
