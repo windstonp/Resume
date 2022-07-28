@@ -10,6 +10,7 @@ export function WorkExperienceImage({ alt, ...rest }: ImageProps){
         alt={alt}
         objectFit="cover"
         layout='fill'
+        placeholder="blur"
         {...rest}
       />
     </ImageContainer>

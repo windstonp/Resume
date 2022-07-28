@@ -2,8 +2,9 @@
  * For a detailed explanation regarding each configuration property and type check, visit:
  * https://jestjs.io/docs/configuration
  */
-
-module.exports = {
+const nextJest = require('next/jest');
+const createJestConfig = nextJest({ dir: './' });
+module.exports = createJestConfig({
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -192,4 +193,4 @@ module.exports = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-};
+});

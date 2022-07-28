@@ -11,9 +11,6 @@ export const Container = styled.section`
 export const Content = styled.div`
   display: flex;
   align-items: center;
-  img{
-    flex: 2;
-  }
 `;
 
 export const InnerContent = styled.div`
@@ -27,4 +24,9 @@ export const InnerContent = styled.div`
 
 export const ButtonContainer = styled.div`
   display: flex;
+`
+
+export const ImageContainer = styled.div`
+  flex: 1;
+  margin-left: 50px;
 `

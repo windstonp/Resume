@@ -2,7 +2,9 @@ import Image from "next/image";
 import { Text } from "../../atoms/Headings/text";
 import { Title } from "../../atoms/Headings/title";
 import { ButtonLink } from "../../atoms/Links/buttonLink";
-import { ButtonContainer, Container, Content, InnerContent } from "./style";
+import { ButtonContainer, Container, Content, ImageContainer, InnerContent } from "./style";
+
+import Photo from '../../../../public/img/me.webp';
 
 export function AboutMe(){
   return(
@@ -23,12 +25,13 @@ export function AboutMe(){
             </ButtonLink>
           </ButtonContainer>
         </InnerContent>
-        <Image 
-          src="/img/me.webp"
-          width="600"
-          height="600"
-          alt="joao alves picture"
-        />
+        <ImageContainer>
+          <Image 
+            src={Photo}
+            alt="joao alves picture"
+            placeholder="blur"
+          />
+        </ImageContainer>
       </Content>
     </Container>
   )
