@@ -2,22 +2,17 @@ import { ButtonLink } from "../../atoms/Links/buttonLink";
 import { TextLink } from "../../atoms/Links/textLink";
 import { Container, ContainerOption } from "./style";
 
-export function NavList(){
+export function NavList() {
   return (
     <Container data-testid="navListComponent">
       <ContainerOption>
-        <TextLink href="/linkedin">
+        <TextLink target="_blank" href={process.env.NEXT_PUBLIC_LINKEDIN_URL}>
           Linkedin
         </TextLink>
       </ContainerOption>
       <ContainerOption>
-        <TextLink href="/github">
+        <TextLink target="_blank" href={process.env.NEXT_PUBLIC_GITHUB_URL}>
           github
-        </TextLink>
-      </ContainerOption>
-      <ContainerOption>
-        <TextLink href="/Projects">
-          Projects
         </TextLink>
       </ContainerOption>
       <ContainerOption>

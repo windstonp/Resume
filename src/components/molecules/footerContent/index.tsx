@@ -1,19 +1,19 @@
 import Link from "next/link";
-import { 
-  Container, 
-  Content, 
-  FooterLink, 
-  FooterSocialLinksContainer, 
-  FooterText, 
-  FooterTitle, 
-  GroupElements 
+import {
+  Container,
+  Content,
+  FooterLink,
+  FooterSocialLinksContainer,
+  FooterText,
+  FooterTitle,
+  GroupElements
 } from "./style";
 import { ptBR } from "date-fns/locale";
 import { formatInTimeZone } from 'date-fns-tz'
 import { useState } from "react";
 import { getSeconds } from "date-fns";
 
-export function FooterContent(){
+export function FooterContent() {
   const [localTime, setLocalTime] = useState(
     formatInTimeZone(new Date, 'America/Sao_Paulo', 'h:mm aa O', {
       locale: ptBR,
@@ -22,7 +22,7 @@ export function FooterContent(){
 
   setInterval(() => {
     let seconds = getSeconds(new Date());
-    if(seconds === 0){
+    if (seconds === 0) {
       setLocalTime(
         formatInTimeZone(new Date, 'America/Sao_Paulo', 'h:mm aa O', {
           locale: ptBR,
@@ -31,7 +31,7 @@ export function FooterContent(){
     }
   }, 1000);
 
-  return(
+  return (
     <Container>
       <Content>
         <GroupElements>
@@ -47,7 +47,7 @@ export function FooterContent(){
             Local Time
           </FooterTitle>
           <FooterText>
-            {localTime} 
+            {localTime}
           </FooterText>
         </GroupElements>
       </Content>
@@ -57,13 +57,13 @@ export function FooterContent(){
             Social
           </FooterTitle>
           <FooterSocialLinksContainer>
-            <Link href="/" passHref>
-              <FooterLink>
+            <Link href={process.env.NEXT_PUBLIC_LINKEDIN_URL!} passHref>
+              <FooterLink target="_blank">
                 Linkedin
               </FooterLink>
             </Link>
-            <Link href="/" passHref>
-              <FooterLink>
+            <Link href={process.env.NEXT_PUBLIC_GITHUB_URL!} passHref>
+              <FooterLink target="_blank">
                 Github
               </FooterLink>
             </Link>

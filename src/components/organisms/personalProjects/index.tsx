@@ -9,16 +9,20 @@ export function PersonalProjects(){
         Personal Projects
       </Title>
       <Content>
-        <ProjectItem 
-          title="PlantManager"
-          role="Developer"
-        />
         <ProjectItem
           title="PlantManager"
           role="Developer"
         />
         <ProjectItem
-          title="PlantManager"
+          title="goFinance"
+          role="Developer"
+        />
+        <ProjectItem
+          title="ignews"
+          role="Developer"
+        />
+        <ProjectItem
+          title="Twick"
           role="Developer"
         />
       </Content>
