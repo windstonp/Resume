@@ -23,7 +23,8 @@ export const InnerContent = styled.div`
 `
 
 export const ButtonContainer = styled.div`
-  display: flex;
+  margin-top: 30px;
+
 `
 
 export const ImageContainer = styled.div`

@@ -10,7 +10,7 @@ import {
 } from "./style";
 import { ptBR } from "date-fns/locale";
 import { formatInTimeZone } from 'date-fns-tz'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getSeconds } from "date-fns";
 
 export function FooterContent() {
@@ -20,16 +20,18 @@ export function FooterContent() {
     })
   );
 
-  setInterval(() => {
-    let seconds = getSeconds(new Date());
-    if (seconds === 0) {
-      setLocalTime(
-        formatInTimeZone(new Date, 'America/Sao_Paulo', 'h:mm aa O', {
-          locale: ptBR,
-        })
-      )
-    }
-  }, 1000);
+  useEffect(() => {
+    setInterval(() => {
+      let seconds = getSeconds(new Date());
+      if (seconds === 0) {
+        setLocalTime(
+          formatInTimeZone(new Date, 'America/Sao_Paulo', 'h:mm aa O', {
+            locale: ptBR,
+          })
+        )
+      }
+    }, 1000);
+  }, []);
 
   return (
     <Container>

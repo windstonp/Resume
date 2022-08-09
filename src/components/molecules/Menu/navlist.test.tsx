@@ -6,24 +6,24 @@ import { theme } from '../../../global/styles/theme';
 import 'jest-styled-components';
 import '@testing-library/jest-dom';
 
-const AppWrapper: React.FC = ({children})=>{
-  return(
+const AppWrapper: React.FC = ({ children }) => {
+  return (
     <ThemeProvider theme={theme}>
       {children}
     </ThemeProvider>
   )
 }
 
-const renderAndGetComponent = () =>{
-  render(<NavList/>,{
+const renderAndGetComponent = () => {
+  render(<NavList />, {
     wrapper: AppWrapper
   });
 
   return screen.getByTestId('navListComponent')
 }
 
-describe('NavList Test',()=>{
-  it('should contain buttonLink Component',()=>{
+describe('NavList Test', () => {
+  it('should contain Button Component', () => {
     const navList = renderAndGetComponent();
     expect(navList).toBeInTheDocument();
 

@@ -1,25 +1,26 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { ButtonLink } from '.';
+import { Button } from '.';
 import { theme } from '../../../../global/styles/theme';
 import { ThemeProvider } from 'styled-components';
 import 'jest-styled-components';
 
 
-const AppProvider: React.FC = ({children}) => {
-  return(
-  <ThemeProvider theme={theme}>
-    {children}
-  </ThemeProvider>
-)};
-const renderAndGetButton = ({...rest}: Object) => {
+const AppProvider: React.FC = ({ children }) => {
+  return (
+    <ThemeProvider theme={theme}>
+      {children}
+    </ThemeProvider>
+  )
+};
+const renderAndGetButton = ({ ...rest }: Object) => {
   render(
-    <ButtonLink
+    <Button
       data-testid='buttonComponent'
       {...rest}
     >
       Button
-    </ButtonLink>,
+    </Button>,
     {
       wrapper: AppProvider
     }
@@ -28,8 +29,8 @@ const renderAndGetButton = ({...rest}: Object) => {
   return screen.getByTestId('buttonComponent');
 }
 
-describe('Test Button Component', ()=>{
-  it('should have title of button', ()=>{
+describe('Test Button Component', () => {
+  it('should have title of button', () => {
     const button = renderAndGetButton({});
 
     expect(button.textContent).toBe('Button');
@@ -40,7 +41,7 @@ describe('Test Button Component', ()=>{
     const button = renderAndGetButton({});
     expect(button).toHaveStyleRule('background-color', theme.colors.primary);
     fireEvent.mouseOver(button);
-    expect(button).toHaveStyleRule('background-color',theme.colors.background[100]);
+    expect(button).toHaveStyleRule('background-color', theme.colors.background[100]);
     fireEvent.mouseLeave(button);
     expect(button).toHaveStyleRule('background-color', theme.colors.primary);
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { ButtonLink } from '.';
+import { Button } from '.';
 import {theme} from '../../../../global/styles/theme';
 
 const ButtonStory = {
-  component: ButtonLink,
+  component: Button,
   argTypes:{
     label: { control: 'text', defaultValue: 'Button' }
   }
@@ -12,7 +12,7 @@ const ButtonStory = {
 
 export const Default = (args) => (
   <ThemeProvider theme={theme}>
-    <ButtonLink {...args}>{args.label}</ButtonLink>
+    <Button {...args}>{args.label}</Button>
   </ThemeProvider>
 );
 

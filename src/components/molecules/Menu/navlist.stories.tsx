@@ -1,15 +1,15 @@
 import React from "react"
 import { ThemeProvider } from "styled-components";
 import { theme } from "../../../global/styles/theme";
-import { NavList } from './'
+import { Menu } from '.'
 const NavListStory = {
-  component: NavList
+  component: Menu
 }
 
-export const Default = ()=>{
+export const Default = () => {
   return (
     <ThemeProvider theme={theme}>
-      <NavList />
+      <Menu />
     </ThemeProvider>
   )
 }

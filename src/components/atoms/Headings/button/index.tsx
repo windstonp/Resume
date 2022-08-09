@@ -1,16 +1,16 @@
 import Link from "next/link";
-import { HTMLAttributes } from "react";
-import { Container } from "./style";
+import { Container } from "./style"
 
 export type ButtonProps = {
   as?: string
 } & React.AnchorHTMLAttributes<HTMLAnchorElement>
-  & HTMLAttributes<HTMLHeadingElement>
+  & React.ButtonHTMLAttributes<HTMLButtonElement>
 
-export function Subtitle({ as = "h3", href = "#", children, ...rest }: ButtonProps) {
+export function Button({ as = 'button', children, href = '#', ...rest }: ButtonProps) {
+
   return (
     <>
-      {as === "a" ?
+      {as === 'a' ?
         <Link href={`${href}`} passHref >
           <Container
             as={as}
@@ -22,13 +22,12 @@ export function Subtitle({ as = "h3", href = "#", children, ...rest }: ButtonPro
         </Link>
         :
         <Container
-          data-testid="subtitleComponent"
+          data-testid="ButtonComponent"
           {...rest}
         >
           {children}
         </Container>
       }
-
     </>
   )
 }

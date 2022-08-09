@@ -1,18 +1,16 @@
 import styled, { css } from 'styled-components'
 
-type buttonProps = {
-  isActive: boolean
-}
 
-export const Container = styled.a<buttonProps>`
-  ${({ theme, isActive }) => css`
+
+export const Container = styled.button`
+  ${({ theme }) => css`
     display: block;
-    margin: 0 auto;
+    margin: 0;
     font-family: ${theme.fonts.family};
     font-size: ${theme.fonts.sizes.medium};
     font-weight: ${theme.fonts.weight.semiBold};
-    background-color: ${isActive ? theme.colors.background[100] : theme.colors.primary};
-    color:  ${isActive ? theme.colors.primary: theme.colors.background[100]};
+    background-color: ${theme.colors.background[100] };
+    color:  ${theme.colors.primary};
     padding: 8px 32px;
     border-width: ${theme.border.widths.medium};
     border-style: solid;
@@ -22,6 +20,8 @@ export const Container = styled.a<buttonProps>`
     text-decoration: none;
     &:hover{
       transition: ${theme.transition.default};
+      background-color: ${theme.colors.primary};
+      color: ${theme.colors.background[100]} 
     }
   `};
 `;

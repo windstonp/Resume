@@ -1,15 +1,12 @@
 import styled, { css } from "styled-components";
 
-type ContainerProps = {
-  color: string|undefined
-}
 
-export const Container = styled.h3<ContainerProps>`
+export const Container = styled.h3`
   ${({theme, color})=> css`
     color: ${color ? color : theme.colors.secondary };
     font-family: ${theme.fonts.family};
     font-weight: ${theme.fonts.weight.semiBold};
     font-size: ${theme.fonts.sizes.medium};
-    text-decoration: ${color ? 'underline' : ''};
+    text-decoration: ${color ? 'underline' : 'none'};
   `}
 `; 

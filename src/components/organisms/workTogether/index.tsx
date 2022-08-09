@@ -1,9 +1,8 @@
 import { Subtitle } from "../../atoms/Headings/subtitle";
-import { TextLink } from "../../atoms/Links/textLink";
 import { Container, WaveSvg } from "./style";
 
-export function WorkTogether(){
-  return(
+export function WorkTogether() {
+  return (
     <Container>
       <WaveSvg>
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -15,9 +14,9 @@ export function WorkTogether(){
       <Subtitle>
         Need a Developer to give life to your ideas?
       </Subtitle>
-      <TextLink href='/contact' >
+      <Subtitle as="a" href='/contact' >
         Let’s Work Together!
-      </TextLink>
+      </Subtitle>
     </Container>
   )
 }

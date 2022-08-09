@@ -1,10 +1,10 @@
 import { HTMLAttributes } from "react";
 import { Container } from "./style";
 
-export type ButtonLinkProps = HTMLAttributes<HTMLHeadingElement>
+export type ButtonProps = HTMLAttributes<HTMLHeadingElement>
 
-export function Title({color, children, ...rest}: ButtonLinkProps) {
-  return(
+export function Title({ color, children, ...rest }: ButtonProps) {
+  return (
     <Container
       data-testid="titleComponent"
       color={color}
