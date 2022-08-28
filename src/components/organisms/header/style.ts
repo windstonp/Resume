@@ -1,7 +1,9 @@
 import styled, { css } from "styled-components";
 
-export const Container = styled.div`
-  width: 100%;
+export const Container = styled.header`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 `;
 
 export const Nav = styled.nav`
