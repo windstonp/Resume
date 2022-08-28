@@ -34,6 +34,10 @@ export const WaveSvg = styled.div`
     display: block;
     width: calc(100% + 1.3px);
     height: 75px;
+
+    @media (max-width: 1024px){
+      height: 50px;
+    }
   }
 
   .shape-fill {

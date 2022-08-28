@@ -1,6 +1,5 @@
 import { LogoText } from "../../molecules/logoText";
 import { Menu } from "../../molecules/Menu";
-import { MenuMobile } from "../../molecules/mobile/menu";
 import { Container, Nav } from "./style";
 
 export function Header() {
@@ -13,7 +12,6 @@ export function Header() {
           finalText=" Alves"
         />
         <Menu />
-        <MenuMobile />
       </Nav>
     </Container>
   )

@@ -15,7 +15,7 @@ export const Container = styled.div`
   border-top-width: ${({theme}) => theme.border.widths.thinner};
   border-style: solid;
 
-  padding: 25px;
+  padding: 30px;
   padding-left: 0px;
 
   &:first-child{
@@ -30,5 +30,10 @@ export const Container = styled.div`
 
   h3{
     margin-bottom: 30px;
+  }
+
+  @media only screen and (max-width: 650px){
+    padding: 0;
+    padding-top: 30px;
   }
 `;

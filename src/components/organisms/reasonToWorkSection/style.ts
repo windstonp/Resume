@@ -10,4 +10,8 @@ export const Container = styled.section`
 
 export const Content = styled.div`
   display: flex;
+
+  @media only screen  and (max-width: 650px){
+    flex-direction: column;
+  }
 `;

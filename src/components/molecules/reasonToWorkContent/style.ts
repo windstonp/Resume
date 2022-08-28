@@ -13,7 +13,7 @@ export const Container = styled.div`
   border-right-width: ${({theme}) => theme.border.widths.thinner};
   border-style: solid;
 
-  padding: 25px;
+  padding: 30px;
 
   &:first-child{
     padding-left: 0;
@@ -26,5 +26,13 @@ export const Container = styled.div`
 
   h3{
     margin-bottom: 50px;
+  }
+
+  @media only screen  and (max-width: 650px){
+    border-right-width: 0;
+    border-bottom-width: ${({theme}) => theme.border.widths.thinner};
+    padding: 0;
+    padding-bottom: 30px;
+    margin-bottom: 0;
   }
 `;

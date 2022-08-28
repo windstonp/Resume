@@ -9,6 +9,11 @@ export const Container = styled.section`
 `
 export const Content = styled.div`
   display: flex;
+
+  
+  @media only screen and (max-width: 650px){
+    flex-direction: column;
+  }
 `;
 
 export const InnerContent = styled.div`
@@ -17,5 +22,15 @@ export const InnerContent = styled.div`
   margin-bottom: 30px;
   &:last-child{
     margin-right: 0px;
+  }
+
+  @media only screen and (max-width: 650px){
+    margin: 0px;
+
+    & > div {
+      &:last-child{
+        border-bottom-width: 0;
+      }
+    }
   }
 `;

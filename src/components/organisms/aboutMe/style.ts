@@ -11,13 +11,16 @@ export const Container = styled.section`
 export const Content = styled.div`
   display: flex;
   align-items: center;
+  @media only screen and (max-width: 650px){
+    flex-direction: column-reverse;
+  }
 `;
 
 export const InnerContent = styled.div`
   flex: 1;
 
 
-  a, p{
+  a{
     margin-top: 50px;
   }
 `
@@ -25,9 +28,18 @@ export const InnerContent = styled.div`
 export const ButtonContainer = styled.div`
   margin-top: 30px;
 
+  @media only screen and (max-width: 650px){
+    display: flex;
+    justify-content: center;
+  }
 `
 
 export const ImageContainer = styled.div`
   flex: 1;
   margin-left: 50px;
+
+  @media only screen and (max-width: 650px){
+    margin: 0px;
+    margin: 30px 0px;
+  }
 `
