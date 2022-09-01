@@ -15,24 +15,6 @@ import S from "./style";
 
 export function ContactTemplate(){
   const { control, register, handleSubmit} = useForm({});
-  const [localTime, setLocalTime] = useState(
-    formatInTimeZone(new Date, 'America/Sao_Paulo', 'h:mm aa O', {
-      locale: ptBR,
-    })
-  );
-
-  useEffect(() => {
-    setInterval(() => {
-      let seconds = getSeconds(new Date());
-      if (seconds === 0) {
-        setLocalTime(
-          formatInTimeZone(new Date, 'America/Sao_Paulo', 'h:mm aa O', {
-            locale: ptBR,
-          })
-        )
-      }
-    }, 1000);
-  }, []);
 
   function SubmitedContactForm(form: any){
     
@@ -86,7 +68,11 @@ export function ContactTemplate(){
             </Text>
             <Link href="https://www.zeitverschiebung.net/en/city/3445993" passHref about="see local time details">
               <S.ContactInfoLink>
-                The time now is {localTime}
+                The time now is {
+                  formatInTimeZone(new Date, 'America/Sao_Paulo', 'h:mm aa O', {
+                    locale: ptBR,
+                  })
+                }
               </S.ContactInfoLink>
             </Link>
           </S.ContactInfoGroup>

@@ -6,4 +6,5 @@ export const Container = styled.section`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  height: calc(100% + 100px);
 `

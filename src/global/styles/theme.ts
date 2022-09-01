@@ -17,11 +17,11 @@ export const theme = {
       bold: 800,
     },
     sizes: {
-      small: '1rem',
-      medium: '1.2rem',
-      large: '1.8rem',
-      xlarge: '2rem',
-      huge: '3rem',
+      small: '0.85rem',
+      medium: '1rem',
+      large: '1.4rem',
+      xlarge: '1.8rem',
+      huge: '2.2rem',
     },
     heights: {
       xsmall: '14px',

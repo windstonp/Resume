@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Control, useController } from "react-hook-form";
 import { Container, Select, Label } from "./style";
 
@@ -31,16 +32,10 @@ export function SelectControlled(
         value={value}
         name={name}
         ref={ref}
-      >
-        <option key="placeholder" value="" disabled selected>{placeholder}</option>
-        {options.map((option)=>(
-          <>
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          </>
-        ))}
-      </Select>
+        placeholder={placeholder}
+        options={options}
+        classNamePrefix="react-select"
+      />
       <Label
         htmlFor={name}
       >

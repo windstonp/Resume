@@ -12,7 +12,7 @@ export const Container = styled.main`
 `
 
 export const ContactForm = styled.form`
-  flex: 1;
+  flex: 1.5;
 `
 
 export const ContactInfoContainer = styled.div`
@@ -35,10 +35,9 @@ export const GroupInput = styled.div`
   display: flex;
   flex-direction: row;
   margin-top: 30px;
-  div:first-child {
-    margin-right: 15px;
+  & div:first-child{
+    margin-right: 10px;
   }
-
 `
 
 export const ButtonContainer = styled.div`

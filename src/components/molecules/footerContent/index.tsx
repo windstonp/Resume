@@ -14,24 +14,6 @@ import { useEffect, useState } from "react";
 import { getSeconds } from "date-fns";
 
 export function FooterContent() {
-  const [localTime, setLocalTime] = useState(
-    formatInTimeZone(new Date, 'America/Sao_Paulo', 'h:mm aa O', {
-      locale: ptBR,
-    })
-  );
-
-  useEffect(() => {
-    setInterval(() => {
-      let seconds = getSeconds(new Date());
-      if (seconds === 0) {
-        setLocalTime(
-          formatInTimeZone(new Date, 'America/Sao_Paulo', 'h:mm aa O', {
-            locale: ptBR,
-          })
-        )
-      }
-    }, 1000);
-  }, []);
 
   return (
     <Container>
@@ -49,7 +31,9 @@ export function FooterContent() {
             Local Time
           </FooterTitle>
           <FooterText>
-            {localTime}
+            {formatInTimeZone(new Date, 'America/Sao_Paulo', 'h:mm aa O', {
+              locale: ptBR,
+            })}
           </FooterText>
         </GroupElements>
       </Content>
