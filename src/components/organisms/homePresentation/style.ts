@@ -7,4 +7,5 @@ export const Container = styled.section`
   align-items: center;
   width: 100%;
   height: calc(100% + 100px);
+  background: ${({theme}) => theme.colors.secondary};
 `

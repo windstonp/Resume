@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const DesktopContainer = styled.ul`
   list-style: none;
@@ -15,10 +15,15 @@ export const ContainerOption = styled.li`
 `;
 
 export const MobileContainer = styled.div`
-  display: none;
-  @media (max-width: 1024px){
-    display: block;
-  }
+  ${({theme}) => css`
+    display: none;
+    @media (max-width: 1024px){
+      display: block;
+    }
+    h3{
+      color: ${theme.colors.background[100]}
+    }
+  `}
 `;
 
 const Style = {ContainerOption, DesktopContainer, MobileContainer}

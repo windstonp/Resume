@@ -4,6 +4,7 @@ export const Container = styled.header`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  background: ${({theme}) => theme.colors.secondary};
 `;
 
 export const Nav = styled.nav`
