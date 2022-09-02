@@ -8,6 +8,11 @@ export function Menu() {
     <>
       <S.DesktopContainer data-testid="navListComponent">
         <S.ContainerOption>
+          <Subtitle color={theme.colors.background[100]} as="a" href="/">
+            Home
+          </Subtitle>
+        </S.ContainerOption>
+        <S.ContainerOption>
           <Subtitle color={theme.colors.background[100]} as="a" target="_blank" href={process.env.NEXT_PUBLIC_LINKEDIN_URL}>
             Linkedin
           </Subtitle>

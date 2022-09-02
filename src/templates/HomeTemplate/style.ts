@@ -7,9 +7,9 @@ export const Container = styled.main`
   width: 100%;
 
   section{
-    padding: 100px 100px;
+    padding: 25px 100px;
     @media (max-width: 768px) {
-      padding: 50px 25px;
+      padding: 25px;
     }
   }
 `

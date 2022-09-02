@@ -21,10 +21,7 @@ export const Container = styled.section`
 
 export const WaveSvg = styled.div` 
 
-
-  position: absolute;
-  top: 0;
-  left: 0;
+  background: ${({theme}) => theme.colors.background[100]};
   width: 100%;
   overflow: hidden;
   line-height: 0;
@@ -38,6 +35,12 @@ export const WaveSvg = styled.div`
     @media (max-width: 1024px){
       height: 50px;
     }
+
+    @media only screen and (max-width: 650px){
+      height: 30px;
+
+    }
+
   }
 
   .shape-fill {

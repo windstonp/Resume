@@ -14,7 +14,9 @@ import { useEffect, useState } from "react";
 import { getSeconds } from "date-fns";
 
 export function FooterContent() {
-
+  const localTime = formatInTimeZone(new Date, 'America/Sao_Paulo', 'h:mm aa O', {
+    locale: ptBR,
+  });
   return (
     <Container>
       <Content>
@@ -31,9 +33,7 @@ export function FooterContent() {
             Local Time
           </FooterTitle>
           <FooterText>
-            {formatInTimeZone(new Date, 'America/Sao_Paulo', 'h:mm aa O', {
-              locale: ptBR,
-            })}
+            {localTime}
           </FooterText>
         </GroupElements>
       </Content>

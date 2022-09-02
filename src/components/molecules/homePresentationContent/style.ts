@@ -16,3 +16,6 @@ export const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
 `
+export const CanvasComponent = styled.div`
+  height: 300px !important;
+`;

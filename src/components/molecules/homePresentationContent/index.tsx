@@ -2,8 +2,13 @@ import { Subtitle } from "../../atoms/Headings/subtitle";
 import { Text } from "../../atoms/Headings/text";
 import { Title } from "../../atoms/Headings/title";
 import { Button } from "../../atoms/Headings/button";
-import { ButtonContainer, Container } from "./style";
+import { ButtonContainer, CanvasComponent, Container } from "./style";
 import { theme } from "../../../global/styles/theme";
+import { Model } from "../../models/michelangeloBust";
+import { Suspense } from "react";
+import { PerspectiveCamera, ContactShadows } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
+import { Bloom, EffectComposer, SSAO, SMAA } from   "@react-three/postprocessing";
 
 export function HomePresentationContent() {
   return (
@@ -18,6 +23,34 @@ export function HomePresentationContent() {
       >
         FullStack Website and Mobile Developer
       </Title>
+      <Suspense fallback={
+        <CanvasComponent>
+        </CanvasComponent>
+      }>
+        <CanvasComponent>
+          <Canvas>
+            <PerspectiveCamera makeDefault rotation={[0, 0, 0]} position={[0, 250, 6500]} far={90000}/>
+            <spotLight intensity={5} angle={45} position={[6500, 10000, 6500]} castShadow />
+            <ContactShadows />
+            <Suspense fallback={null}>
+              <Model url="michelangelo.fbx" />
+            </Suspense>
+            <EffectComposer>
+              <Bloom
+                luminanceThreshold={0}
+                luminanceSmoothing={0.9}
+                height={300}
+                opacity={3}
+              />
+              <SSAO 
+                distanceFalloff={1}
+                distanceThreshold={3}
+              />
+              <SMAA />
+            </EffectComposer>
+          </Canvas>
+        </CanvasComponent>
+      </Suspense>
       <Text
         color={theme.colors.background[100]}
       >
