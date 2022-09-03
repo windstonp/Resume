@@ -1,8 +1,7 @@
 import Image from "next/image";
 import { Text } from "../../atoms/Headings/text";
 import { Title } from "../../atoms/Headings/title";
-import { Button } from "../../atoms/Headings/button";
-import { ButtonContainer, Container, Content, ImageContainer, InnerContent } from "./style";
+import { Container, Content, ImageContainer, InnerContent } from "./style";
 
 import Photo from '../../../../public/img/me.webp';
 
@@ -17,13 +16,6 @@ export function AboutMe() {
           <Text>
             I am João Vitor Assunção Alves. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pellentesque ex nec hendrerit fringilla.   Sed dapibus, mauris vitae imperdiet feugiat, sapien tortor vehicula   Sed dapibus, mauris vitae imperdiet feugiat, sapien tortor vehicula sem, Sed dapibus, mauris vitae imperdiet feugiat, sapien tortor.   Sed dapibus, mauris vitae imperdiet feugiat, sapien tortor vehicula sem, Sed dapibus, mauris vitae imperdiet feugiat, sapien. <br /> <br /> Sed dapibus, mauris vitae imperdiet feugiat, sapien tortor vehicula sem, Sed dapibus, mauris vitae imperdiet feugiat, sapien.
           </Text>
-          <ButtonContainer>
-            <Button
-              href="/about-me"
-            >
-              Learn more about me
-            </Button>
-          </ButtonContainer>
         </InnerContent>
         <ImageContainer>
           <Image
