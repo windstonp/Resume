@@ -7,7 +7,7 @@ import Photo from '../../../../public/img/me.webp';
 
 export function AboutMe() {
   return (
-    <Container>
+    <Container id="aboutMe">
       <Title>
         About Me
       </Title>

@@ -1,19 +1,15 @@
 import styled, { css } from "styled-components";
+import { motion } from "framer-motion";
 
-export const Container = styled.header`
+export const MenuContainer = styled(motion.div)`
   ${({theme}) => css`
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    padding: 25px 100px;
-    background: ${ theme.colors.secondary};
-
-    h3{
-      color: ${theme.colors.background[100]}
-    }
-
-    @media (max-width: 768px) {
-      padding: 25px 25px;
-    }
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: ${ theme.colors.background[100] };
+    z-index: 1;
   `}
 `;
