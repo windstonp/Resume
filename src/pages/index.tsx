@@ -1,13 +1,13 @@
 import type { NextPage } from 'next'
 import Head from 'next/head';
-import {HomeTemplate} from '../templates/HomeTemplate';
+import {HomeTemplate} from '../screens/Home';
 
 const Home: NextPage = () => {
   return (
     <>
       <Head>
         <title>
-          J.Alves
+          Home | J.Alves
         </title>
       </Head>
       <HomeTemplate />
