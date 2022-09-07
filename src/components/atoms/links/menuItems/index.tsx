@@ -8,17 +8,17 @@ type MenuItemProps ={
 export function MenuItem({href, children, onClick, ...rest}:MenuItemProps){
   const variants = {
     menuOpen: {
-      y: 0,
+      x: 0,
       opacity: 1,
       transition: {
-        y: { stiffness: 1000, velocity: -100 }
+        x: { stiffness: 1000, velocity: -100 }
       }
     },
     menuClosed: {
-      y: 50,
+      x: 200,
       opacity: 0,
       transition: {
-        y: { stiffness: 1000 }
+        x: { stiffness: 1000 }
       }
     }
   }

@@ -28,9 +28,9 @@ export function HomePresentationContent() {
         </CanvasComponent>
       }>
         <CanvasComponent>
-          <Canvas>
-            <PerspectiveCamera makeDefault rotation={[0, 0, 0]} position={[0, 250, 6500]} far={90000}/>
-            <spotLight intensity={5} angle={45} position={[6500, 10000, 6500]} castShadow />
+          <Canvas performance={{ min: 0.1, max: 0.1, current: 0.1 }}>
+            <PerspectiveCamera makeDefault rotation={[0, 0, 0]} position={[0, 5, 200]}/>
+            <spotLight intensity={5} angle={45} position={[250, 250, 250]}  />
             <ContactShadows />
             <Suspense fallback={null}>
               <Model url="michelangelo.fbx" />
@@ -38,14 +38,11 @@ export function HomePresentationContent() {
             <EffectComposer>
               <Bloom
                 luminanceThreshold={0}
-                luminanceSmoothing={0.9}
-                height={300}
+                luminanceSmoothing={1}
+                height={100}
                 opacity={3}
               />
-              <SSAO 
-                distanceFalloff={1}
-                distanceThreshold={3}
-              />
+              <SSAO />
               <SMAA />
             </EffectComposer>
           </Canvas>

@@ -1,25 +1,30 @@
-import { MenuToggle } from "../../molecules/menuToggle";
-import { MenuContainer } from "./style";
+import { MenuFloatToggle } from "../../molecules/MenuFloatToggle";
+import { DividerMenuLine, MenuContainer, NavCollumn } from "./style";
 import { motion, useCycle } from "framer-motion";
 import { MenuList } from "../../molecules/menuList";
+import { Text } from "../../atoms/Headings/text";
 
 export function Header() {
   const [isOpen, toggleOpen] = useCycle(false, true);
 
   const variants = {
     menuOpen: {
-      y: "0",
+      x: "0",
       borderRadius: 0,
       transition: {
-        ease: "easeInOut"
+        type: "spring",
+        ease: [0, 0.71, 0.2, 1.01],
+        bounce: 0
       }
     },
     menuClosed: {
-      y: "100%",
-      borderRadius: "100%",
+      x: "100%",
+      borderRadius: "25% 0 0 25%",
       transition: {
-        delay: 0.5,
-        ease: "easeInOut"
+        type: "spring",
+        when: "afterChildren",
+        ease: "easeInOut",
+        bounce: 0
       }
     }
   }
@@ -31,10 +36,19 @@ export function Header() {
         <MenuContainer 
           initial={false}
           variants={variants}
+          style={{
+            borderRadius: "25% 0 0 25%"
+          }}
         >
-          <MenuList toggle={() => toggleOpen()} />
+          <NavCollumn>
+            <Text>
+              Navigation
+            </Text>
+            <DividerMenuLine/>
+            <MenuList toggle={() => toggleOpen()} />
+          </NavCollumn>
         </MenuContainer>
-        <MenuToggle isOpen={isOpen} toggle={() => toggleOpen()} />
+        <MenuFloatToggle isOpen={isOpen} toggle={() => toggleOpen()} />
       </motion.nav>
   )
 }

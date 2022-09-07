@@ -27,7 +27,7 @@ export function MenuList({toggle}: MenuListProps){
       <MenuItem target="_blank" href={process.env.NEXT_PUBLIC_LINKEDIN_URL!}>
         Github
       </MenuItem>
-      <MenuItem href="#aboutMe" onClick={toggle}>
+      <MenuItem href="/#aboutMe" onClick={toggle}>
         About Me
       </MenuItem>
       <MenuItem href="/contact" onClick={toggle}>
