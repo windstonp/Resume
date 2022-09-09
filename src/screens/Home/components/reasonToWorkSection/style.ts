@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
 export const Container = styled.section`
@@ -8,7 +9,7 @@ export const Container = styled.section`
  
 `
 
-export const Content = styled.div`
+export const Content = styled(motion.div)`
   display: flex;
 
   @media only screen  and (max-width: 650px){

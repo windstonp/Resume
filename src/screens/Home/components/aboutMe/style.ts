@@ -1,3 +1,4 @@
+import { Reveal } from "components/Reveal";
 import styled from "styled-components"
 
 export const Container = styled.section`
@@ -16,7 +17,7 @@ export const Content = styled.div`
   }
 `;
 
-export const InnerContent = styled.div`
+export const InnerContent = styled(Reveal)`
   flex: 1;
 
 
@@ -25,16 +26,7 @@ export const InnerContent = styled.div`
   }
 `
 
-export const ButtonContainer = styled.div`
-  margin-top: 30px;
-
-  @media only screen and (max-width: 650px){
-    display: flex;
-    justify-content: center;
-  }
-`
-
-export const ImageContainer = styled.div`
+export const ImageContainer = styled(Reveal)`
   flex: 1;
   margin-left: 50px;
 

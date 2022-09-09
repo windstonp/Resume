@@ -3,15 +3,20 @@ import SenaiLogo from '../../../../../public/img/senai-sd.webp';
 import DoutboxLogo from '../../../../../public/img/doutbox-logo.webp';
 import { TextContent } from "./components/TextContent";
 import { Image } from "./components/Image";
-import { Heading2 } from "../../../../components/Headings";
+import { Heading2 } from "components/Headings";
+import { Reveal } from "components/Reveal";
 
 export function WorkExperience(){
   return(
     <Container>
-      <Heading2>
-        Work Experience
-      </Heading2>
-      <Content>
+      <Reveal>
+        <Heading2>
+          Work Experience
+        </Heading2>
+      </Reveal>
+      <Content
+        direction="right"
+      >
         <TextContent
           company="Senai Soluções digitais"
         >
@@ -22,7 +27,9 @@ export function WorkExperience(){
           alt="Senai Soluções digitais"
         />
       </Content>
-      <Content>
+      <Content
+        direction="right"
+      >
         <TextContent
           company="Doutbox"
         >

@@ -1,3 +1,4 @@
+import { Reveal } from "components/Reveal";
 import styled from "styled-components"
 
 export const Container = styled.section`
@@ -16,7 +17,7 @@ export const Content = styled.div`
   }
 `;
 
-export const InnerContent = styled.div`
+export const InnerContent = styled(Reveal)`
 
   margin-right: 50px;
   margin-bottom: 30px;

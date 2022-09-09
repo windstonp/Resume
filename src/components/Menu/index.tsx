@@ -12,7 +12,6 @@ export function Menu() {
   const variants = {
     menuOpen: {
       x: "0",
-      borderRadius: 0,
       transition: {
         type: "spring",
         ease: [0, 0.71, 0.2, 1.01],
@@ -21,7 +20,6 @@ export function Menu() {
     },
     menuClosed: {
       x: "100%",
-      borderRadius: "25% 0 0 25%",
       transition: {
         type: "spring",
         when: "afterChildren",
@@ -38,9 +36,6 @@ export function Menu() {
         <MenuContainer 
           initial={false}
           variants={variants}
-          style={{
-            borderRadius: "25% 0 0 25%"
-          }}
         >
           <NavCollumn>
             <MutedText>

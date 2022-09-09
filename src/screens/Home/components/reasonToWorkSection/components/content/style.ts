@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { Reveal } from 'components/Reveal';
 
-export const Container = styled.div`
+export const Container = styled(Reveal)`
 
   display: flex;
   justify-content: space-around;

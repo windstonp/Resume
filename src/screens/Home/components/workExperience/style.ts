@@ -1,3 +1,4 @@
+import { Reveal } from 'components/Reveal';
 import styled from 'styled-components';
 
 export const Container = styled.section`
@@ -7,7 +8,7 @@ export const Container = styled.section`
   width: 100%;
 `;
 
-export const Content = styled.div`
+export const Content = styled(Reveal)`
   margin-top: 50px;
   display: flex;
   cursor: pointer;

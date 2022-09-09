@@ -1,13 +1,16 @@
-import { Heading2 } from "../../../../components/Headings";
+import { Reveal } from "components/Reveal";
+import { Heading2 } from "components/Headings";
 import { ExpertiseContent } from "./components/content";
 import { Container, Content, InnerContent } from "./style";
 
 export function ExpertiseSection(){
   return(
     <Container>
-      <Heading2>
-        My Expertise
-      </Heading2>
+      <Reveal>
+        <Heading2>
+          My Expertise
+        </Heading2>
+      </Reveal>
       <Content >
         <InnerContent>
           <ExpertiseContent
@@ -25,7 +28,9 @@ export function ExpertiseSection(){
             Integer maximus tellus at scelerisque sagittis. Aliquam tincidunt ullamcorper nisi, ac sollicitudin est viverra id. Phasellus ultricies turpis nunc.m
           </ExpertiseContent>
         </InnerContent>
-        <InnerContent>
+        <InnerContent
+          direction="right"
+        >
           <ExpertiseContent
             subtitleSection="React Native"
           >
