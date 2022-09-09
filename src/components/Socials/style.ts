@@ -16,6 +16,7 @@ export const Title = styled.p`
     font-family: ${theme.fonts.family};
     font-weight: ${theme.fonts.weight.normal};
     font-size: ${theme.fonts.sizes.small};
+    margin-bottom: 1rem;
   `}
 `;
 

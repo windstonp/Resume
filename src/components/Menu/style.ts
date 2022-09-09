@@ -27,7 +27,8 @@ export const MenuContainer = styled(motion.div)`
     right: 0;
     bottom: 0;
     width: 100vw;
-    max-width: 425px;
+    min-width: 425px;
+    max-width: 30vw;
     height: 100vh;
     background: ${ theme.colors.background[100] };
     z-index: 1;

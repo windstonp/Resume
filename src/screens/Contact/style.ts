@@ -5,6 +5,7 @@ export const Container = styled.main`
   position: relative;
   flex-direction: row;
   width: 100%;
+  min-height: calc(100vh - 205px);
   padding: 100px 100px;
   @media (max-width: 768px) {
     padding: 25px;
@@ -12,11 +13,17 @@ export const Container = styled.main`
 `
 
 export const ContactForm = styled.form`
+  display: flex;
   flex: 1.5;
+  justify-content: center;
+  flex-direction: column;
 `
 
 export const ContactInfoContainer = styled.div`
+  display: flex;
   flex: 1;
+  justify-content: center;
+  flex-direction: column;
 `
 
 export const ContactInfoGroup = styled.div`
@@ -44,6 +51,62 @@ export const ButtonContainer = styled.div`
   margin: 30px 0px;
 `
 
+export const SvgShape = styled.div`
+  ${({theme}) => css`
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: translateY(-2px);
+
+    & svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 100px;
+      transform: rotateY(180deg);
+
+      @media only screen and (max-width: 650px) {
+        width: calc(200% + 1.3px);
+        height: 40px;
+      }
+    }
+
+    & .shape-fill {
+      fill: ${theme.colors.secondary};
+    }
+
+  `}
+`
+
+export const WaveSvg = styled.div` 
+
+  background: ${({theme}) => theme.colors.background[100]};
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+
+  svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 75px;
+
+    @media (max-width: 1024px){
+      height: 50px;
+    }
+
+    @media only screen and (max-width: 650px){
+      height: 30px;
+
+    }
+
+  }
+
+  .shape-fill {
+      fill: ${({theme}) => theme.colors.background[50]};
+  }
+`;
+
 const styles = {
   Container, 
   ContactForm, 
@@ -51,7 +114,8 @@ const styles = {
   ContactInfoGroup,
   ContactInfoLink, 
   GroupInput,
-  ButtonContainer
+  ButtonContainer,
+  WaveSvg
 }
 
 export default styles;
