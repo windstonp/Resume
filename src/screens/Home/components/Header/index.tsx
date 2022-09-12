@@ -3,12 +3,12 @@ import { ContactShadows, PerspectiveCamera } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { Bloom, EffectComposer, SMAA, SSAO } from '@react-three/postprocessing';
 
-import { Button } from '../../../../components/Button';
+import { Button } from 'components/Button';
 import Model from "./components/models";
 
 import { ButtonContainer, CanvasComponent, Container, SvgShape } from './style';
-import { Heading1, Heading2 } from '../../../../components/Headings';
-import { MutedText } from '../../../../components/MutedText';
+import { Heading1, Heading2 } from 'components/Headings';
+import { MutedText } from 'components/MutedText';
 
 export function Header(){
   return(

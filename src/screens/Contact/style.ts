@@ -1,15 +1,12 @@
 import styled, { css } from "styled-components";
 
-export const Container = styled.main`
+export const Container = styled.section`
   display: flex;
   position: relative;
   flex-direction: row;
   width: 100%;
   min-height: calc(100vh - 205px);
-  padding: 100px 100px;
-  @media (max-width: 768px) {
-    padding: 25px;
-  }
+
 `
 
 export const ContactForm = styled.form`

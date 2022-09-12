@@ -1,11 +1,11 @@
+import { Heading4 } from "components/Headings";
+import { MutedText } from "components/MutedText";
 import { formatInTimeZone } from "date-fns-tz";
 import { ptBR } from "date-fns/locale";
 import { Socials } from "../Socials";
 import {
   Container,
   Content,
-  FooterText,
-  FooterTitle,
   GroupElements
 } from "./style";
 
@@ -17,20 +17,20 @@ export function Footer(){
     <Container>
       <Content>
         <GroupElements>
-          <FooterTitle>
+          <Heading4>
             updated At
-          </FooterTitle>
-          <FooterText>
+          </Heading4>
+          <MutedText>
             2020
-          </FooterText>
+          </MutedText>
         </GroupElements>
         <GroupElements>
-          <FooterTitle>
+          <Heading4>
             Local Time
-          </FooterTitle>
-          <FooterText>
+          </Heading4>
+          <MutedText>
             {localTime}
-          </FooterText>
+          </MutedText>
         </GroupElements>
       </Content>
       <Content>

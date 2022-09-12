@@ -77,16 +77,6 @@ const GlobalStyle = createGlobalStyle`
       color: ${theme.colors.tertiary};
       flex: 1;
     }
-
-    ::-webkit-scrollbar {
-      width: 0;
-      height: 2px;
-      background: transparent;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background:${theme.colors.tertiary};
-    }
   `}
 `;
 

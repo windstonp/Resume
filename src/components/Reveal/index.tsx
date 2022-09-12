@@ -1,4 +1,4 @@
-import { motion, useAnimation, useInView } from "framer-motion";
+import { motion, useAnimation, useInView, Variants } from "framer-motion";
 import { MutableRefObject, ReactNode, useEffect, useRef } from "react";
 
 export type RevealProps = {
@@ -54,17 +54,19 @@ export function Reveal({
     ? { x: 0 }
     : { y: 0 };
 
-  const variants = {
+  const variants: Variants = {
     hidden: {
       ...directions[direction],
       opacity: 0,
+      visibility: "hidden",
     },
     visible: {
       ...finalLocation,
       opacity: 1,
       transition: {
         duration: 0.75
-      }
+      },
+      visibility: "visible"
     }
   }
   return(

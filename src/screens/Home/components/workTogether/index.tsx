@@ -1,4 +1,4 @@
-import { Heading1, Heading3 } from "../../../../components/Headings";
+import { Heading1, Heading3 } from "components/Headings";
 import { Container, WaveSvg } from "./style";
 
 export function WorkTogether() {

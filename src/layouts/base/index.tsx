@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
-import { Container } from '../../components/Container';
-import { Menu } from '../../components/Menu';
-import { Footer } from '../../components/Footer';
+import { Container } from 'components/Container';
+import { Menu } from 'components/Menu';
+import { Footer } from 'components/Footer';
 import { ContainerBase, ContentBase } from './style';
 
 type BaseProps = {

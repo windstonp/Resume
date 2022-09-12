@@ -1,6 +1,6 @@
 import React from 'react';
-import { Stack } from '../../components/Stack';
-import { Base } from '../../layouts/base';
+import { Stack } from 'components/Stack';
+import { Base } from 'layouts/base';
 import { AboutMe } from './components/aboutMe';
 import { ExpertiseSection } from './components/expertiseSection';
 import { Header } from './components/Header';

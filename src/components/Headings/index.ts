@@ -31,3 +31,12 @@ export const Heading3 = styled.h3`
     color: ${theme.colors.secondary}
   `}
 `;
+
+export const Heading4 = styled.h4`
+  ${({ theme }) => css`
+    font-size: ${theme.fonts.sizes.medium};
+    line-height: ${theme.fonts.heights.medium};
+    ${Heading};
+    color: ${theme.colors.secondary}
+  `}
+`;

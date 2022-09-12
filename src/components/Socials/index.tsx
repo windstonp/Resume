@@ -1,22 +1,24 @@
+import { Heading4 } from "components/Headings";
+import { MutedText } from "components/MutedText";
 import Link from "next/link";
-import { Anchor, Container, Title } from "./style";
+import { Container } from "./style";
 
 export function Socials(){
   return(
     <Container>
-      <Title>
+      <Heading4>
         Social
-      </Title>
+      </Heading4>
       <div>
         <Link href={process.env.NEXT_PUBLIC_LINKEDIN_URL!} passHref>
-          <Anchor target="_blank">
+          <MutedText as="a"  target="_blank">
             Linkedin
-          </Anchor>
+          </MutedText>
         </Link>
         <Link href={process.env.NEXT_PUBLIC_GITHUB_URL!} passHref>
-          <Anchor target="_blank">
+          <MutedText as="a" target="_blank">
             Github
-          </Anchor>
+          </MutedText>
         </Link>
       </div>
     </Container>

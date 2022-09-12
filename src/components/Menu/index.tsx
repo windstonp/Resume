@@ -1,4 +1,4 @@
-import { DividerMenuLine, MenuContainer, NavBar, NavCollumn } from "./style";
+import { ContainerNonFloatButtons, DividerMenuLine, MenuContainer, MenuDesktopContainer, MenuDesktopItem, NavBar, NavCollumn } from "./style";
 import { useCycle } from "framer-motion";
 import { Socials } from "../Socials";
 import { MenuList } from "./components/menuList";
@@ -47,9 +47,38 @@ export function Menu() {
           <Socials />
         </MenuContainer>
         <MenuFloatToggle isOpen={isOpen} toggle={() => toggleOpen()} />
-        <Heading3 onClick={()=>toggleOpen()}>
-          menu
-        </Heading3>
+        <ContainerNonFloatButtons>
+          <Heading3 onClick={()=>toggleOpen()}>
+            menu
+          </Heading3>
+          <MenuDesktopContainer>
+            <MenuDesktopItem>
+              <Heading3 as="a" href="/">
+                Home
+              </Heading3>
+            </MenuDesktopItem>
+            <MenuDesktopItem>
+              <Heading3 as="a" target="_blank" href={process.env.NEXT_PUBLIC_GITHUB_URL!}>
+                Linkedin
+              </Heading3>
+            </MenuDesktopItem>
+            <MenuDesktopItem>
+              <Heading3 as="a" target="_blank" href={process.env.NEXT_PUBLIC_LINKEDIN_URL!}>
+                Github
+              </Heading3>
+            </MenuDesktopItem>
+            <MenuDesktopItem>
+              <Heading3 as="a" href="/#aboutMe">
+                About Me
+              </Heading3>
+            </MenuDesktopItem>
+            <MenuDesktopItem>
+              <Heading3 as="a" href="/contact">
+                let's talk
+              </Heading3>
+            </MenuDesktopItem>
+          </MenuDesktopContainer>
+        </ContainerNonFloatButtons>
       </NavBar>
   )
 }

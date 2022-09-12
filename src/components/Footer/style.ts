@@ -7,14 +7,21 @@ export const Container = styled.footer`
   background-color: ${({theme}) => theme.colors.background[100]};
   padding: 15px 100px;
 
-  @media (max-width: 768px) {
-    padding: 0 25px;
+  @media only screen and (max-width: 425px){
+    flex-direction: column;
   }
 `
 
 export const Content = styled.div`
   display: inherit;
   flex-direction: row;
+  @media only screen and (max-width: 425px){
+    flex-direction: column;
+
+    :last-child{
+      margin-top: 1.5rem;
+    }
+  }
 `;
 
 export const GroupElements = styled.div`
@@ -25,25 +32,12 @@ export const GroupElements = styled.div`
   &:last-child{
     margin-right: 0px;
   }
-`
 
-export const FooterTitle = styled.p`
-  ${({theme}) => css`
-    color: ${theme.colors.tertiary };
-    font-family: ${theme.fonts.family};
-    font-weight: ${theme.fonts.weight.normal};
-    font-size: ${theme.fonts.sizes.small};
+  h4{
     margin-bottom: 1rem;
-  `}
-`;
+  }
 
-export const FooterText = styled.p`
-  ${({theme}) => css`
-    color: ${theme.colors.secondary };
-    font-family: ${theme.fonts.family};
-    font-weight: ${theme.fonts.weight.normal};
-    font-size: ${theme.fonts.sizes.small};
-    font-weight: ${theme.fonts.weight.semiBold};
-    text-decoration: none;
-  `}
-`;
+  @media only screen and (max-width: 425px){
+    margin-top: 1.5rem;
+  }
+`

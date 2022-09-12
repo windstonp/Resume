@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import { Heading3 } from "../../../../../../components/Headings";
-import { MutedText } from "../../../../../../components/MutedText";
+import { Heading3 } from "components/Headings";
+import { MutedText } from "components/MutedText";
 import { Container } from "./style";
 
 

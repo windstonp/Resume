@@ -7,4 +7,10 @@ export const Container = styled.div`
     margin-top: 10px;
     text-align: right;
   }
+
+  @media only screen and (max-width: 425px){
+    p{
+      text-align: left;
+    }
+  }
 `;

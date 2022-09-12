@@ -12,4 +12,8 @@ export const Content = styled(Reveal)`
   margin-top: 50px;
   display: flex;
   cursor: pointer;
+
+  @media only screen and (max-width: 425px){
+    flex-direction: column;
+  }
 `;

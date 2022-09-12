@@ -13,6 +13,7 @@ export const Container = styled.section`
     color: ${({theme}) => theme.colors.primary };
     text-decoration: none;
     font-weight: ${({theme}) => theme.fonts.weight.bold};
+    margin-top: 1.5rem;
     &:hover{
       text-decoration: underline;
     }
