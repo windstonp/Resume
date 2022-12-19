@@ -2,7 +2,7 @@ import Link from "next/link";
 import S, { SvgShape } from "./style";
 
 import { Base } from "layouts/base";
-import { BudgetOptions, ServiceOptions } from "constants/ContactConstants";
+import { ServiceOptions } from "constants/ContactConstants";
 
 import { formatInTimeZone } from "date-fns-tz";
 import { ptBR } from "date-fns/locale";
@@ -14,19 +14,54 @@ import { Button } from "components/Button";
 import { Stack } from "components/Stack";
 import { MutedText } from "components/MutedText";
 import { Heading1, Heading3 } from "components/Headings";
-
-
+import { InputNumericControlled } from "components/Form/numericInput";
+import { SizedContainer } from "components/Container";
+import { checkCaptcha, sendContact } from "lib/api";
+import { useRef, useState } from "react";
+import { theme } from "global/styles/theme";
+import ScaleLoader from "react-spinners/ScaleLoader";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import ReCAPTCHA from "react-google-recaptcha"
+import { ToastError, ToastSuccess } from "components/Toast";
 
 export function ContactTemplate(){
-  const { control, register, handleSubmit} = useForm({});
+  const schema = yup.object({
+    name: yup.string().required(),
+    message: yup.string().required(),
+    budget: yup.string().required(),
+    email: yup.string().required(),
+    service: yup.string().required().label("Service").oneOf(ServiceOptions)
+  });
+  const { control, handleSubmit, formState: {errors}, getValues } = useForm({ resolver: yupResolver(schema) });
 
+  const captchaRef = useRef<ReCAPTCHA>(null);
+
+  const [loading, setLoading] = useState(false);
   const localTime = formatInTimeZone(new Date, 'America/Sao_Paulo', 'h:mm aa O', {
     locale: ptBR,
   });
 
-  function SubmitedContactForm(form: any){
-    
+  async function SubmitedContactForm(form: any){
+    setLoading(true);
+    const token = captchaRef.current?.getValue();
+    captchaRef.current?.reset();
+    const captchaRes = await checkCaptcha(token ?? "");
+    if (captchaRes.status !== 200){
+      ToastError("😱 Oops! something bad happened!");
+      setLoading(false);
+      return;
+    } 
+    const contactRes = await sendContact(form);
+    if (contactRes.status !== 200) {
+      ToastError("😱 Oops! something bad happened!");
+      setLoading(false);
+      return;
+    }
+    ToastSuccess("🥳 E-mail sent!");
+    setLoading(false);
   }
+
   return(
     <Base>
       <SvgShape>
@@ -37,6 +72,8 @@ export function ContactTemplate(){
         </svg>
       </SvgShape>
       <Stack spacing="5rem">
+        <SizedContainer>
+
         <S.Container>
           <S.ContactInfoContainer>
             <Heading3>
@@ -110,6 +147,7 @@ export function ContactTemplate(){
                 placeholder="What's your name?"
                 name="name"
                 type="text"
+                error={errors.name && errors.name.message}
               />
               <InputControlled
                 control={control}
@@ -117,6 +155,7 @@ export function ContactTemplate(){
                 placeholder="What's your email address?"
                 name="email"
                 type="email"
+                error={errors.email && errors.email.message}
               />
             </S.GroupInput>
             <S.GroupInput>
@@ -126,13 +165,14 @@ export function ContactTemplate(){
                 name="service"
                 placeholder="What are you interested in?"
                 options={ServiceOptions}
+                error={errors.service && errors.service }
               />
-              <SelectControlled
+              <InputNumericControlled
                 control={control}
                 label="Budget"
                 name="budget"
                 placeholder="What's your budget?"
-                options={BudgetOptions}
+                error={errors.budget && errors.budget.message}
               />
             </S.GroupInput>
             <S.GroupInput>
@@ -142,15 +182,29 @@ export function ContactTemplate(){
                 placeholder="What's your message?"
                 name="message"
                 type="text"
+                error={errors.message && errors.message.message}
               />
             </S.GroupInput>
             <S.ButtonContainer>
-              <Button as="button">
-                Send Message
-              </Button>
+                <Button as="button" disabled={loading}>
+                  {loading ?
+                    <ScaleLoader 
+                      height={14}
+                      color={theme.colors.background[100]}
+                      
+                    />
+                  :
+                    "Send Message"
+                  }
+                </Button>
+                <ReCAPTCHA
+                  ref={captchaRef}
+                  sitekey={process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY!}
+                />
             </S.ButtonContainer>
           </S.ContactForm>
         </S.Container>
+        </SizedContainer>
       </Stack>
       <S.WaveSvg>
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">

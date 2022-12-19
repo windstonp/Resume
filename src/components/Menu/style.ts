@@ -52,6 +52,7 @@ export const NavCollumn = styled.div`
 export const MenuDesktopContainer = styled.ul`
   display: flex;
   list-style: none;
+  justify-content: flex-end;
 
   @media only screen and (max-width: 768px){
     display: none;
@@ -77,6 +78,9 @@ export const MenuDesktopItem = styled.li`
 `
 
 export const ContainerNonFloatButtons = styled.div`
+  width: 100%;
+  text-align: right;
+  padding: 2.5rem 10rem;
   h3{
     display: none;
   }
@@ -89,5 +93,13 @@ export const ContainerNonFloatButtons = styled.div`
       display: none;
     }
   }
+    @media only screen and (max-width: 768px){
+      padding: 2.5rem 5rem;
+    }
+
+    
+    @media only screen and (max-width: 425px) {
+      padding: 2rem;
+    }
 
 `

@@ -1,19 +1,20 @@
 
 import { useRef, memo } from 'react';
-import { useFrame, useLoader } from '@react-three/fiber'
-import { Group, TextureLoader } from 'three';
-import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader'
+import { invalidate, useFrame } from '@react-three/fiber'
+import { useFBX } from '@react-three/drei';
+import { Group } from 'three';
 
 type ModelProps = {
   url: string
 }
 
 function Model({url}: ModelProps) {
-  const model = useLoader(FBXLoader, url);
+  const model = useFBX(url);
   const ref = useRef<Group>(null);
-  useFrame((state, delta) => {
+  useFrame(() => {
     if(ref.current){
       ref.current.rotation.y += 0.01;
+      invalidate();
     }
   });
   return (
@@ -25,5 +26,5 @@ function Model({url}: ModelProps) {
   )
 }
 
-
+useFBX.preload("michelangelo.fbx")
 export default memo(Model)

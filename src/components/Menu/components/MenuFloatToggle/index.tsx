@@ -14,7 +14,7 @@ export const MenuFloatToggle = ({ toggle, isOpen }: ToggleProps) => {
     scrollY.onChange((latest) => {
       setShow(latest > 100);
     })
-  }, []);
+  });
   return (
     <Container
       initial={false}

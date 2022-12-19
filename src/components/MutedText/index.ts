@@ -5,6 +5,6 @@ export const MutedText  = styled.p`
     color: ${color ? color : theme.colors.tertiary };
     font-family: ${theme.fonts.family};
     font-weight: ${theme.fonts.weight.normal};
-    font-size: ${theme.fonts.sizes.small};
+    font-size: ${theme.fonts.sizes.medium};
   `}
 `; 

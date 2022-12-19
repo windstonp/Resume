@@ -12,6 +12,7 @@ export const Button = styled.button`
     background-color: ${theme.colors.background[100] };
     color:  ${theme.colors.primary};
     padding: 8px 32px;
+    min-width: 175px;
     border-width: ${theme.border.widths.medium};
     border-style: solid;
     cursor: pointer;
@@ -22,6 +23,9 @@ export const Button = styled.button`
       transition: ${theme.transition.default};
       background-color: ${theme.colors.primary};
       color: ${theme.colors.background[100]} 
+    }
+    &:disabled{
+      background-color: ${theme.colors.primary};
     }
   `};
 `;

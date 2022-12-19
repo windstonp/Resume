@@ -1,5 +1,5 @@
-import ReactSelect from 'react-select';
 import styled, { css } from 'styled-components';
+import { NumericFormat } from 'react-number-format';
 
 export const Container = styled.div`
   display: flex;
@@ -7,29 +7,24 @@ export const Container = styled.div`
   flex: 1;
 `;
 
-export const Select = styled.select`
+export const Input = styled(NumericFormat)`
   ${({theme})=> css`
-    background-color: ${({theme})=> theme.colors.background[50]};
+    padding: 10px;
+    background-color: ${theme.colors.background[50]};
     border: 0;
     border-bottom-width: 2px;
     border-style: solid;
     border-color: ${theme.colors.background[100]};
     color: ${theme.colors.tertiary };
-    padding: 10px;
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-    cursor: pointer;
+    font-family: ${theme.fonts.family};
+    font-weight: ${theme.fonts.weight.normal};
+    font-size: ${theme.fonts.sizes.small};
 
-    option {
-      color: ${theme.colors.tertiary };
-      font-family: ${theme.fonts.family};
-      font-weight: ${theme.fonts.weight.normal};
-      font-size: ${theme.fonts.sizes.small};
-      padding: 10px;
-
-      &:disabled{
-        display: none;
+    &:focus {
+      border-color: ${theme.colors.secondary};
+      color: ${theme.colors.secondary};
+      & + label {
+        color: ${theme.colors.secondary};
       }
     }
   `}
@@ -52,4 +47,5 @@ export const Error = styled.span`
   font-family: ${({theme}) => theme.fonts.family};
   padding: 10px 10px;
   height: 20px;
+
 `;

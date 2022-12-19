@@ -7,6 +7,11 @@ export const Container = styled.section`
   width: 100%;
   min-height: calc(100vh - 205px);
 
+  @media only screen and (max-width: 900px){
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
 `
 
 export const ContactForm = styled.form`
@@ -38,14 +43,38 @@ export const ContactInfoLink = styled.a`
 export const GroupInput = styled.div`
   display: flex;
   flex-direction: row;
-  margin-top: 30px;
+  margin-top: 3rem;
   & div:first-child{
-    margin-right: 10px;
+    margin-right: 1rem;
+  }
+
+  @media only screen and (max-width: 900px){
+    flex-direction: column;
+    margin-top: 0;
+
+    & > div {
+      margin-top: 1.5rem;
+    }
   }
 `
 
 export const ButtonContainer = styled.div`
-  margin: 30px 0px;
+  margin: 3rem 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  button{
+    margin-right: 3rem;
+  }
+
+  @media only screen and (max-width: 425px){
+    flex-direction: column;
+    button{
+      margin-right: 0;
+      margin-bottom: 1.5rem;
+    }
+  }
 `
 
 export const SvgShape = styled.div`
@@ -112,7 +141,7 @@ const styles = {
   ContactInfoLink, 
   GroupInput,
   ButtonContainer,
-  WaveSvg
+  WaveSvg,
 }
 
 export default styles;

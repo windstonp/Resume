@@ -8,6 +8,7 @@ import { PersonalProjects } from './components/personalProjects';
 import { ReasonsToWorkSection } from './components/reasonToWorkSection';
 import { WorkExperience } from './components/workExperience';
 import { WorkTogether } from './components/workTogether';
+import { SizedContainer } from 'components/Container';
 
 
 export function HomeTemplate(){
@@ -15,11 +16,13 @@ export function HomeTemplate(){
     <Base >
       <Stack spacing="5rem">
         <Header/>
-        <ReasonsToWorkSection/>
-        <ExpertiseSection />
-        <WorkExperience />
-        <PersonalProjects/>
-        <AboutMe />
+        <SizedContainer>
+          <ReasonsToWorkSection/>
+          <ExpertiseSection />
+          <WorkExperience />
+          <PersonalProjects/>
+          <AboutMe />
+        </SizedContainer>
         <WorkTogether />
       </Stack>
     </Base>

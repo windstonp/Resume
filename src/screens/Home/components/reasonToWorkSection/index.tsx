@@ -22,15 +22,14 @@ export function ReasonsToWorkSection(){
         >
           <ReasonContent
             subtitleSection={<span>2+ years of web development <br/> & <br/> mobile development</span>}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer magna libero, pellentesque nec tellus sed, bibendum pharetra ipsum. In posuere vestibulum ligula, sed blandit velit euismod porttitor. Integer viverra in ipsum sed suscipit. Morbi ids.
-          </ReasonContent>
-          <ReasonContent
-            subtitleSection={<span>Empathic <br/> & <br/> caring strategist</span>}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer magna libero, pellentesque nec tellus sed, bibendum pharetra ipsum. In posuere vestibulum ligula, sed blandit velit euismod porttitor. Integer viverra in ipsum sed suscipit. Morbi ids.
+            I've been working as an professional web developer since february 2020 and throughout my journey I've learned
+            a lot about the dev ecosystem learning about good practices and agile development.
           </ReasonContent>
           <ReasonContent
             subtitleSection={<span>Curiosity<br/>&<br/>continuous improvement </span>}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer magna libero, pellentesque nec tellus sed, bibendum pharetra ipsum. In posuere vestibulum ligula, sed blandit velit euismod porttitor. Integer viverra in ipsum sed suscipit. Morbi ids.
+              I always want to learn new things because besides a job, progamming is also my hobby which I love, so every oportunity that I've
+              to try a new tool or learn a new framework I would love to do so. because with that experience I expect to discover new ways to solve
+              the problems with a better approach
           </ReasonContent>
         </Content>
       </Container>

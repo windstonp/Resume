@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ContainerBase = styled.div`
   overflow: hidden;
-  footer, nav {
+  footer{
     padding: 2.5rem 10rem;
 
     @media only screen and (max-width: 768px){

@@ -15,8 +15,11 @@ export const Container = styled.footer`
 export const Content = styled.div`
   display: inherit;
   flex-direction: row;
+  max-width: 80rem;
+  margin: 0 auto;
   @media only screen and (max-width: 425px){
     flex-direction: column;
+    margin: 0;
 
     :last-child{
       margin-top: 1.5rem;

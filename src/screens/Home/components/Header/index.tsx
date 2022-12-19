@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
-import { ContactShadows, PerspectiveCamera } from '@react-three/drei';
+import { PerspectiveCamera } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import { Bloom, EffectComposer, SMAA, SSAO } from '@react-three/postprocessing';
+import { Bloom, EffectComposer } from '@react-three/postprocessing';
 
 import { Button } from 'components/Button';
 import Model from "./components/models";
@@ -9,50 +9,49 @@ import Model from "./components/models";
 import { ButtonContainer, CanvasComponent, Container, SvgShape } from './style';
 import { Heading1, Heading2 } from 'components/Headings';
 import { MutedText } from 'components/MutedText';
+import { SizedContainer } from 'components/Container';
+import { Loader } from './components/models/loader';
 
 export function Header(){
+  
   return(
     <div>
       <Container>
-        <Heading2>
-          João Vitor Assunção Alves
-        </Heading2>
-        <Heading1>
-          FullStack Website and Mobile Developer
-        </Heading1>
-        <Suspense fallback={
-          <CanvasComponent>
-          </CanvasComponent>
-        }>
-          <CanvasComponent>
-            <Canvas performance={{ min: 0.1, max: 0.1, current: 0.1 }}>
-              <PerspectiveCamera makeDefault rotation={[0, 0, 0]} position={[0, 5, 200]} />
-              <spotLight intensity={5} angle={45} position={[250, 250, 250]} />
-              <ContactShadows />
-              <Suspense fallback={null}>
-                <Model url="michelangelo.fbx" />
-              </Suspense>
-              <EffectComposer>
-                <Bloom
-                  luminanceThreshold={0}
-                  luminanceSmoothing={1}
-                  height={100}
-                  opacity={3}
-                />
-                <SSAO />
-                <SMAA />
-              </EffectComposer>
-            </Canvas>
-          </CanvasComponent>
-        </Suspense>
-        <MutedText>
-          Over the past 2 years, I have worked with large companies and startups, helping them to create their innovative websites with unique and innovative features.
-        </MutedText>
-        <ButtonContainer>
-          <Button as="a" href="/contact">
-            Contact me!
-          </Button>
-        </ButtonContainer>
+        <SizedContainer>
+          <Heading2>
+            João Vitor Assunção Alves
+          </Heading2>
+          <Heading1>
+            FullStack Website and Mobile Developer
+          </Heading1>
+          <Suspense fallback={<Loader />}>
+            <CanvasComponent>
+              <Canvas frameloop="demand" performance={{current: 0.2, max: 0.5, min: 0.1, debounce:50}}>
+                <PerspectiveCamera makeDefault rotation={[0, 0, 0]} position={[0, 5, 200]} />
+                <spotLight intensity={5} angle={45} position={[250, 250, 250]} />
+                <Suspense fallback={null}>
+                  <Model url="michelangelo.fbx" />
+                </Suspense>
+                <EffectComposer>
+                  <Bloom
+                    luminanceThreshold={0}
+                    luminanceSmoothing={1}
+                    height={100}
+                    opacity={3}
+                  />
+                </EffectComposer>
+              </Canvas>
+            </CanvasComponent>
+          </Suspense>
+          <MutedText>
+            Over the past 2 years, I have worked with large companies and startups, helping them to create their innovative websites with unique and innovative features.
+          </MutedText>
+          <ButtonContainer>
+            <Button as="a" href="/contact">
+              Contact me!
+            </Button>
+          </ButtonContainer>
+        </SizedContainer>
       </Container>
       <SvgShape>
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">

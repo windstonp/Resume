@@ -1,15 +1,14 @@
-import { useState } from "react";
 import { Control, useController } from "react-hook-form";
-import { Container, Select, Label } from "./style";
+import { Container, Select, Label, Error } from "./style";
 
-type Option = { value: string, label: string };
 type InputProps = {
   control: Control,
   name: string,
   defaultValue?: string,
   label: string,
   placeholder: string,
-  options: Option[];
+  options: string[];
+  error?: any,
 }
 
 export function SelectControlled(
@@ -17,7 +16,8 @@ export function SelectControlled(
   name, 
   label = "",
   placeholder,
-  options
+  options,
+  error
 }: InputProps){
   const { field: { onChange, onBlur, value, ref }} = useController({
     control,
@@ -25,6 +25,11 @@ export function SelectControlled(
   })
   return (
     <Container>
+        <Error>
+          {error &&
+            error.message
+          }
+        </Error>
       <Select
         id={name}
         onChange={onChange}
@@ -32,10 +37,21 @@ export function SelectControlled(
         value={value}
         name={name}
         ref={ref}
-        placeholder={placeholder}
-        options={options}
-        classNamePrefix="react-select"
-      />
+        defaultValue={placeholder}
+      >
+        <option disabled>
+          {placeholder}
+        </option>
+        {options.map((item)=>{
+          return (
+            <option value={item} key={item}>
+              {item}
+            </option>
+          )
+        })
+          
+        }
+      </Select>
       <Label
         htmlFor={name}
       >

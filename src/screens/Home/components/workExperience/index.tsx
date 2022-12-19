@@ -20,7 +20,7 @@ export function WorkExperience(){
         <TextContent
           company="Senai Soluções digitais"
         >
-          Equipe de soluções digitais com foco em soluções direcionadas a empresas.
+          Worked as a React Native developer to provide high quality apps.
         </TextContent>
         <Image 
           src={SenaiLogo}
@@ -33,7 +33,8 @@ export function WorkExperience(){
         <TextContent
           company="Doutbox"
         >
-          Equipe de soluções digitais com foco em soluções direcionadas a empresas.
+          Worked as a Full Stack Developer with focus on developing solutions
+          for e-commerces.
         </TextContent>
         <Image
           src={DoutboxLogo}

@@ -6,6 +6,7 @@ export const Container = styled(Reveal)`
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+  flex:0.5;
   
   margin: 30px 0;
 

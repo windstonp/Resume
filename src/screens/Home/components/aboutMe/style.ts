@@ -11,6 +11,7 @@ export const Container = styled.section`
 `
 export const Content = styled.div`
   display: flex;
+  margin-bottom: 5rem;
   align-items: center;
   @media only screen and (max-width: 650px){
     flex-direction: column-reverse;
@@ -27,8 +28,9 @@ export const InnerContent = styled(Reveal)`
 `
 
 export const ImageContainer = styled(Reveal)`
-  flex: 1;
-  margin-left: 50px;
+  flex: 0.25;
+  margin-right: 5rem;
+  margin-top: 3rem;
 
   @media only screen and (max-width: 650px){
     margin: 0px;

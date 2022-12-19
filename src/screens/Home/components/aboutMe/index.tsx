@@ -15,11 +15,6 @@ export function AboutMe() {
         </Heading2>
       </Reveal>
       <Content>
-        <InnerContent>
-          <MutedText>
-            I am João Vitor Assunção Alves. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pellentesque ex nec hendrerit fringilla.   Sed dapibus, mauris vitae imperdiet feugiat, sapien tortor vehicula   Sed dapibus, mauris vitae imperdiet feugiat, sapien tortor vehicula sem, Sed dapibus, mauris vitae imperdiet feugiat, sapien tortor.   Sed dapibus, mauris vitae imperdiet feugiat, sapien tortor vehicula sem, Sed dapibus, mauris vitae imperdiet feugiat, sapien. <br /> <br /> Sed dapibus, mauris vitae imperdiet feugiat, sapien tortor vehicula sem, Sed dapibus, mauris vitae imperdiet feugiat, sapien.
-          </MutedText>
-        </InnerContent>
         <ImageContainer
           direction="right"
         >
@@ -29,6 +24,15 @@ export function AboutMe() {
             placeholder="blur"
           />
         </ImageContainer>
+        <InnerContent>
+          <MutedText>
+            Hello There, I'm João Vitor Assunção Alves. I'm a software developer based on Brazil, I've been working professionally
+            since 2020 but I've started into the software develop world since 2018 when I've enrolled in a programming technical course
+            which I've graduated in 2020.
+            <br /><br />
+            I love music and playing games, my favorite game is Life is Strange
+          </MutedText>
+        </InnerContent>
       </Content>
     </Container>
   )

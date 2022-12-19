@@ -40,3 +40,10 @@ export const Label  = styled.label`
     padding: 0 10px;
   `}
 `
+export const Error = styled.span`
+  color: ${({theme}) => theme.colors.danger};
+  font-size: ${({theme}) => theme.fonts.sizes.small};
+  font-family: ${({theme}) => theme.fonts.family};
+  padding: 10px 10px;
+    height: 20px;
+`;
