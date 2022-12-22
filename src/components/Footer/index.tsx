@@ -27,7 +27,7 @@ export function Footer() {
       <Content>
         <GroupElements>
           <Heading4>updated At</Heading4>
-          <MutedText>2020</MutedText>
+          <MutedText>2022</MutedText>
         </GroupElements>
         <GroupElements>
           <Heading4>Local Time</Heading4>
