@@ -1,36 +1,41 @@
-import { Heading4 } from "components/Headings";
-import { MutedText } from "components/MutedText";
-import { formatInTimeZone } from "date-fns-tz";
-import { ptBR } from "date-fns/locale";
-import { Socials } from "../Socials";
-import {
-  Container,
-  Content,
-  GroupElements
-} from "./style";
+import { Heading4 } from 'components/Headings';
+import { MutedText } from 'components/MutedText';
+import { getSeconds, ptBR } from 'date-fns';
+import { formatInTimeZone } from 'date-fns-tz';
+import { useEffect, useState } from 'react';
+import { Socials } from '../Socials';
+import { Container, Content, GroupElements } from './style';
 
-export function Footer(){
-  const localTime = formatInTimeZone(new Date, 'America/Sao_Paulo', 'h:mm aa O', {
-    locale: ptBR,
+export function Footer() {
+  const [localTime, setLocalTime] = useState(
+    formatInTimeZone(new Date(), 'America/Sao_Paulo', 'h:mm aa O', {
+      locale: ptBR,
+    }),
+  );
+
+  useEffect(() => {
+    setInterval(() => {
+      const seconds = getSeconds(new Date());
+      if (seconds === 0) {
+        setLocalTime(
+          formatInTimeZone(new Date(), 'America/Sao_Paulo', 'h:mm aa O', {
+            locale: ptBR,
+          }),
+        );
+      }
+    }, 1000);
   });
-  return(
+
+  return (
     <Container>
       <Content>
         <GroupElements>
-          <Heading4>
-            updated At
-          </Heading4>
-          <MutedText>
-            2020
-          </MutedText>
+          <Heading4>updated At</Heading4>
+          <MutedText>2020</MutedText>
         </GroupElements>
         <GroupElements>
-          <Heading4>
-            Local Time
-          </Heading4>
-          <MutedText>
-            {localTime}
-          </MutedText>
+          <Heading4>Local Time</Heading4>
+          <MutedText>{localTime}</MutedText>
         </GroupElements>
       </Content>
       <Content>

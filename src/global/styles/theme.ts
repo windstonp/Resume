@@ -6,11 +6,12 @@ export const theme = {
     danger: `#ff3232`,
     background: {
       50: '#181818',
-      100: '#252525'
+      100: '#252525',
     },
   },
-  fonts:{
-    family: "Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+  fonts: {
+    family:
+      "Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
     weight: {
       light: 300,
       normal: 400,
@@ -42,11 +43,11 @@ export const theme = {
     widths: {
       thinner: '1px',
       thin: '2px',
-      medium: '3px'
+      medium: '3px',
     },
     radius: {
       small: '0.4rem',
       medium: '0.8rem',
     },
   },
-}
+};

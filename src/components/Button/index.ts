@@ -1,6 +1,4 @@
-import styled, { css } from 'styled-components'
-
-
+import styled, { css } from 'styled-components';
 
 export const Button = styled.button`
   ${({ theme }) => css`
@@ -9,8 +7,8 @@ export const Button = styled.button`
     font-family: ${theme.fonts.family};
     font-size: ${theme.fonts.sizes.medium};
     font-weight: ${theme.fonts.weight.semiBold};
-    background-color: ${theme.colors.background[100] };
-    color:  ${theme.colors.primary};
+    background-color: ${theme.colors.background[100]};
+    color: ${theme.colors.primary};
     padding: 8px 32px;
     min-width: 175px;
     border-width: ${theme.border.widths.medium};
@@ -19,12 +17,12 @@ export const Button = styled.button`
     border-color: ${theme.colors.primary};
     text-align: center;
     text-decoration: none;
-    &:hover{
+    &:hover {
       transition: ${theme.transition.default};
       background-color: ${theme.colors.primary};
-      color: ${theme.colors.background[100]} 
+      color: ${theme.colors.background[100]};
     }
-    &:disabled{
+    &:disabled {
       background-color: ${theme.colors.primary};
     }
   `};

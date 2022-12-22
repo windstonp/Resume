@@ -1,6 +1,7 @@
 import React from 'react';
 import { Stack } from 'components/Stack';
 import { Base } from 'layouts/base';
+import { SizedContainer } from 'components/Container';
 import { AboutMe } from './components/aboutMe';
 import { ExpertiseSection } from './components/expertiseSection';
 import { Header } from './components/Header';
@@ -8,23 +9,21 @@ import { PersonalProjects } from './components/personalProjects';
 import { ReasonsToWorkSection } from './components/reasonToWorkSection';
 import { WorkExperience } from './components/workExperience';
 import { WorkTogether } from './components/workTogether';
-import { SizedContainer } from 'components/Container';
 
-
-export function HomeTemplate(){
+export function HomeTemplate() {
   return (
-    <Base >
+    <Base>
       <Stack spacing="5rem">
-        <Header/>
+        <Header />
         <SizedContainer>
-          <ReasonsToWorkSection/>
+          <ReasonsToWorkSection />
           <ExpertiseSection />
           <WorkExperience />
-          <PersonalProjects/>
+          <PersonalProjects />
           <AboutMe />
         </SizedContainer>
         <WorkTogether />
       </Stack>
     </Base>
-  )
+  );
 }

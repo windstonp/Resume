@@ -1,25 +1,23 @@
-import { MenuItem } from "../menuItems";
-import { Container } from "./style";
+import { MenuItem } from '../menuItems';
+import { Container } from './style';
 
 type MenuListProps = {
-  toggle: () => void
-}
+  toggle: () => void;
+};
 
-export function MenuList({toggle}: MenuListProps){
+export function MenuList({ toggle }: MenuListProps) {
   const variants = {
     menuOpen: {
-      transition: { staggerChildren: 0.07, delayChildren: 0.2 }
+      transition: { staggerChildren: 0.07, delayChildren: 0.2 },
     },
     menuClosed: {
-      transition: { staggerChildren: 0.05, staggerDirection: -1 }
-    }
+      transition: { staggerChildren: 0.05, staggerDirection: -1 },
+    },
   };
-  return(
-    <Container
-      variants={variants}
-    >
-      <MenuItem href="/"  onClick={toggle}>
-        Home 
+  return (
+    <Container variants={variants}>
+      <MenuItem href="/" onClick={toggle}>
+        Home
       </MenuItem>
       <MenuItem target="_blank" href={process.env.NEXT_PUBLIC_GITHUB_URL!}>
         Linkedin
@@ -34,5 +32,5 @@ export function MenuList({toggle}: MenuListProps){
         let's talk
       </MenuItem>
     </Container>
-  )
+  );
 }

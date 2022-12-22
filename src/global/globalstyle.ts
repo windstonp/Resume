@@ -5,44 +5,41 @@ const GlobalStyle = createGlobalStyle`
     @font-face {
       font-family: 'Satoshi-Light';
       src: url('/fonts/Satoshi-Light.woff2') format('woff2'),
-          url('/fonts/Satoshi-Light.woff') format('woff'),
-          url('/fonts/Satoshi-Light.ttf') format('truetype');
-          font-weight: 300;
-          font-display: swap;
-          font-style: normal;
+        url('/fonts/Satoshi-Light.woff') format('woff'),
+        url('/fonts/Satoshi-Light.ttf') format('truetype');
+      font-weight: 300;
+      font-display: swap;
+      font-style: normal;
     }
-
 
     @font-face {
       font-family: 'Satoshi-Regular';
       src: url('/fonts/Satoshi-Regular.woff2') format('woff2'),
-          url('/fonts/Satoshi-Regular.woff') format('woff'),
-          url('/fonts/Satoshi-Regular.ttf') format('truetype');
-          font-weight: 400;
-          font-display: swap;
-          font-style: normal;
+        url('/fonts/Satoshi-Regular.woff') format('woff'),
+        url('/fonts/Satoshi-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-display: swap;
+      font-style: normal;
     }
-
 
     @font-face {
       font-family: 'Satoshi-Medium';
       src: url('/fonts/Satoshi-Medium.woff2') format('woff2'),
-          url('/fonts/Satoshi-Medium.woff') format('woff'),
-          url('/fonts/Satoshi-Medium.ttf') format('truetype');
-          font-weight: 500;
-          font-display: swap;
-          font-style: normal;
+        url('/fonts/Satoshi-Medium.woff') format('woff'),
+        url('/fonts/Satoshi-Medium.ttf') format('truetype');
+      font-weight: 500;
+      font-display: swap;
+      font-style: normal;
     }
-
 
     @font-face {
       font-family: 'Satoshi-Bold';
       src: url('/fonts/Satoshi-Bold.woff2') format('woff2'),
-          url('/fonts/Satoshi-Bold.woff') format('woff'),
-          url('/fonts/Satoshi-Bold.ttf') format('truetype');
-          font-weight: 700;
-          font-display: swap;
-          font-style: normal;
+        url('/fonts/Satoshi-Bold.woff') format('woff'),
+        url('/fonts/Satoshi-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-display: swap;
+      font-style: normal;
     }
     * {
       margin: 0;
@@ -68,7 +65,9 @@ const GlobalStyle = createGlobalStyle`
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       background-color: ${theme.colors.background[50]};
-      button, label, input {
+      button,
+      label,
+      input {
         font-family: inherit;
       }
     }
@@ -76,6 +75,10 @@ const GlobalStyle = createGlobalStyle`
     body {
       color: ${theme.colors.tertiary};
       flex: 1;
+    }
+
+    a {
+      text-decoration: none;
     }
   `}
 `;

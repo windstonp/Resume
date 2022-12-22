@@ -5,20 +5,19 @@ import { MutedText } from 'components/MutedText';
 import { Container } from './style';
 
 type ReasonToWorkProps = {
-  subtitleSection: string|JSX.Element,
-  children: ReactNode
-}
+  subtitleSection: string;
+  children: ReactNode;
+};
 
-export function ReasonContent({ subtitleSection, children }: ReasonToWorkProps){
-  return(
+export function ReasonContent({
+  subtitleSection,
+  children,
+}: ReasonToWorkProps) {
+  return (
     <Container>
-      <Heading3>
-        {subtitleSection}
-      </Heading3>
+      <Heading3>{subtitleSection}</Heading3>
 
-      <MutedText>
-        {children}
-      </MutedText>
+      <MutedText>{children}</MutedText>
     </Container>
   );
 }

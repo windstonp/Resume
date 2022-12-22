@@ -1,43 +1,42 @@
-import { motion, useAnimation, useInView, Variants } from "framer-motion";
-import { MutableRefObject, ReactNode, useEffect, useRef } from "react";
+import { motion, useAnimation, useInView, Variants } from 'framer-motion';
+import { MutableRefObject, ReactNode, useEffect, useRef } from 'react';
 
 export type RevealProps = {
-  children: ReactNode,
-  amount?: number | "some" | "all" | undefined,
-  direction?: "up" | "down" | "right" | "left",
-  once?: boolean,
-  container?: MutableRefObject<any>,
-  className?: string,
-}
+  children: ReactNode;
+  amount?: number | 'some' | 'all' | undefined;
+  direction?: 'up' | 'down' | 'right' | 'left';
+  once?: boolean;
+  container?: MutableRefObject<any>;
+  className?: string;
+};
 
 export function Reveal({
-  container, 
-  amount = "some", 
-  children, 
-  direction = "left", 
+  container,
+  amount = 'some',
+  children,
+  direction = 'left',
   once = true,
-  className
-}: RevealProps){
+  className,
+}: RevealProps) {
   const ref = useRef(null);
   const controls = useAnimation();
   const isInView = useInView(ref, {
     amount,
     once,
-    root: container
+    root: container,
   });
 
-
   useEffect(() => {
-    if(isInView){
-      controls.start("visible");
-    }else{
-      controls.start("hidden");
+    if (isInView) {
+      controls.start('visible');
+    } else {
+      controls.start('hidden');
     }
   }, [isInView, controls]);
 
   const directions = {
     left: {
-      x: -200
+      x: -200,
     },
     right: {
       x: 200,
@@ -45,12 +44,12 @@ export function Reveal({
     down: {
       y: -200,
     },
-    up:{
-      y: 200
-    }
-  }
+    up: {
+      y: 200,
+    },
+  };
 
-  const finalLocation = (['left', 'right'].includes(direction))
+  const finalLocation = ['left', 'right'].includes(direction)
     ? { x: 0 }
     : { y: 0 };
 
@@ -58,21 +57,21 @@ export function Reveal({
     hidden: {
       ...directions[direction],
       opacity: 0,
-      visibility: "hidden",
+      visibility: 'hidden',
     },
     visible: {
       ...finalLocation,
       opacity: 1,
       transition: {
-        duration: 0.75
+        duration: 0.75,
       },
-      visibility: "visible"
-    }
-  }
-  return(
+      visibility: 'visible',
+    },
+  };
+  return (
     <motion.div
       ref={ref}
-      initial={"hidden"}
+      initial="hidden"
       animate={controls}
       variants={variants}
       className={className}

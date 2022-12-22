@@ -1,39 +1,19 @@
+import { Reveal } from 'components/Reveal';
 import styled from 'styled-components';
 
-export const Container = styled.div`
-
+export const Container = styled(Reveal)`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: column;
-  width: 100%;
-  margin-right: 50px;
-
-  margin-top: 30px;
-
-  border-color: ${({theme}) => theme.colors.primary};
-  border-width: 0;
-  border-top-width: ${({theme}) => theme.border.widths.thinner};
+  border: 0;
+  margin-top: 1rem;
+  border-color: ${({ theme }) => theme.colors.primary};
+  border-top-width: ${({ theme }) => theme.border.widths.thinner};
+  border-bottom-width: ${({ theme }) => theme.border.widths.thinner};
   border-style: solid;
+  padding: 3rem 0;
 
-  padding: 30px;
-  padding-left: 0px;
-
-  &:first-child{
-    padding-left: 0;
-  }
-
-  &:last-child{
-    margin-right: 0px;
-    border-bottom-width: ${({theme}) => theme.border.widths.thinner};
-
-  }
-
-  h3{
-    margin-bottom: 30px;
-  }
-
-  @media only screen and (max-width: 650px){
-    padding: 0;
-    padding-top: 30px;
+  h3 {
+    margin-bottom: 1rem;
   }
 `;

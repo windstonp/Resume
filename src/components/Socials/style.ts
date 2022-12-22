@@ -1,27 +1,27 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
-  ${({theme})=>css`
+  ${({ theme }) => css`
     display: flex;
     flex-direction: column;
     margin-right: 25px;
 
-    &:last-child{
+    &:last-child {
       margin-right: 0px;
     }
 
-    h4{
+    h4 {
       margin-bottom: 1rem;
     }
 
     div a {
       margin-right: 25px;
       text-decoration: none;
-      &:last-child{
+      &:last-child {
         margin-right: 0px;
       }
-      &:hover{
-        color: ${theme.colors.primary };
+      &:hover {
+        color: ${theme.colors.primary};
         transition: ${theme.transition.default};
       }
     }

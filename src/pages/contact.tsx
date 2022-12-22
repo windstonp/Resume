@@ -1,14 +1,12 @@
-import Head from "next/head";
-import React from "react";
-import { ContactTemplate } from "../screens/Contact";
+import { NextSeo } from 'next-seo';
+import React from 'react';
+import { ContactTemplate } from '../screens/Contact';
 
-export default function Contact(){
-  return(
+export default function Contact() {
+  return (
     <>
-      <Head>
-        <title>Contact | J.Alves</title>
-      </Head>
-      <ContactTemplate/>
+      <NextSeo title="Contact" />
+      <ContactTemplate />
     </>
   );
 }

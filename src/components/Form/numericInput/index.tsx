@@ -1,38 +1,34 @@
-import { Control, useController } from "react-hook-form";
-import { Container, Error, Input, Label } from "./style";
+import { Control, useController } from 'react-hook-form';
+import { Container, Error, Input, Label } from './style';
 
 type InputProps = {
-  control: Control,
-  name: string,
-  defaultValue?: string,
-  label: string,
-  placeholder: string,
-  onChangeCustom?: (event: any) => void,
-  error: any
-}
+  control: Control<any>;
+  name: string;
+  defaultValue?: string;
+  label: string;
+  placeholder: string;
+  error: any;
+};
 
-export function InputNumericControlled(
-  { control,
-    name,
-    defaultValue = "",
-    label = "",
-    placeholder,
-    error
-  }: InputProps) {
-  const { field: {onChange, value, onBlur } } = useController({
+export function InputNumericControlled({
+  control,
+  name,
+  defaultValue = '',
+  label = '',
+  placeholder,
+  error,
+}: InputProps) {
+  const {
+    field: { onChange, value, onBlur },
+  } = useController({
     control,
     name,
-    defaultValue
-  })
+    defaultValue,
+  });
 
   return (
     <Container>
-
-        <Error>
-          {error &&
-            error
-          }
-        </Error>
+      <Error>{error && error}</Error>
 
       <Input
         itemRef={name}
@@ -41,7 +37,7 @@ export function InputNumericControlled(
         thousandSeparator=","
         onValueChange={(v) => onChange(v.value)}
         value={value}
-        prefix={"$"}
+        prefix="$"
         fixedDecimalScale
         id={name}
         onChange={onChange}
@@ -49,11 +45,7 @@ export function InputNumericControlled(
         name={name}
         placeholder={placeholder}
       />
-      <Label
-        htmlFor={name}
-      >
-        {label}
-      </Label>
+      <Label htmlFor={name}>{label}</Label>
     </Container>
   );
 }

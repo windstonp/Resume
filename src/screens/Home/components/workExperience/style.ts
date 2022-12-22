@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const Container = styled.section`
   display: flex;
-  flex-direction: column ;
+  flex-direction: column;
   position: relative;
   width: 100%;
 `;
@@ -13,7 +13,7 @@ export const Content = styled(Reveal)`
   display: flex;
   cursor: pointer;
 
-  @media only screen and (max-width: 425px){
+  @media only screen and (max-width: 425px) {
     flex-direction: column;
   }
 `;

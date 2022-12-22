@@ -1,35 +1,32 @@
-import { Control, useController } from "react-hook-form";
-import { Container, Select, Label, Error } from "./style";
+import { Control, useController } from 'react-hook-form';
+import { Container, Select, Label, Error } from './style';
 
 type InputProps = {
-  control: Control,
-  name: string,
-  defaultValue?: string,
-  label: string,
-  placeholder: string,
+  control: Control<any>;
+  name: string;
+  label: string;
+  placeholder: string;
   options: string[];
-  error?: any,
-}
+  error?: any;
+};
 
-export function SelectControlled(
-  {control, 
-  name, 
-  label = "",
+export function SelectControlled({
+  control,
+  name,
+  label = '',
   placeholder,
   options,
-  error
-}: InputProps){
-  const { field: { onChange, onBlur, value, ref }} = useController({
+  error,
+}: InputProps) {
+  const {
+    field: { onChange, onBlur, value, ref },
+  } = useController({
     control,
-    name
-  })
+    name,
+  });
   return (
     <Container>
-        <Error>
-          {error &&
-            error.message
-          }
-        </Error>
+      <Error>{error && error.message}</Error>
       <Select
         id={name}
         onChange={onChange}
@@ -39,24 +36,16 @@ export function SelectControlled(
         ref={ref}
         defaultValue={placeholder}
       >
-        <option disabled>
-          {placeholder}
-        </option>
-        {options.map((item)=>{
+        <option disabled>{placeholder}</option>
+        {options.map((item) => {
           return (
             <option value={item} key={item}>
               {item}
             </option>
-          )
-        })
-          
-        }
+          );
+        })}
       </Select>
-      <Label
-        htmlFor={name}
-      >
-        {label}
-      </Label>
+      <Label htmlFor={name}>{label}</Label>
     </Container>
   );
 }

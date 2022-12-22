@@ -1,18 +1,14 @@
-import type { NextPage } from 'next'
-import Head from 'next/head';
-import {HomeTemplate} from '../screens/Home';
+import type { NextPage } from 'next';
+import { NextSeo } from 'next-seo';
+import { HomeTemplate } from '../screens/Home';
 
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>
-          Home | J.Alves
-        </title>
-      </Head>
+      <NextSeo title="Home" />
       <HomeTemplate />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
