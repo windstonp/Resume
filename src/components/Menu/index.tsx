@@ -61,7 +61,7 @@ export function Menu() {
               <Heading3
                 as="a"
                 target="_blank"
-                href={process.env.NEXT_PUBLIC_GITHUB_URL!}
+                href={process.env.NEXT_PUBLIC_LINKEDIN_URL!}
               >
                 Linkedin
               </Heading3>
@@ -70,7 +70,7 @@ export function Menu() {
               <Heading3
                 as="a"
                 target="_blank"
-                href={process.env.NEXT_PUBLIC_LINKEDIN_URL!}
+                href={process.env.NEXT_PUBLIC_GITHUB_URL!}
               >
                 Github
               </Heading3>
