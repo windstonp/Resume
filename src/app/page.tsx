@@ -5,7 +5,6 @@ import {
   Container,
   Flex,
   Heading,
-  Section,
   Separator,
   Text,
 } from "@radix-ui/themes";

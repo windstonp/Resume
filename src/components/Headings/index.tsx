@@ -6,7 +6,7 @@ import { AccentColor } from "@/contexts/useTheme";
 
 export interface TypographyPropsGeneric {
   children: React.ReactNode;
-  color?: any;
+  color?: string;
   style?: React.CSSProperties;
   className?: string;
 }
