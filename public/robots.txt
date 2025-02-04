@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://www.alvez.dev
-
-# Sitemaps
-Sitemap: https://www.alvez.dev/sitemap.xml
