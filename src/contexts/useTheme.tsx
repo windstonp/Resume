@@ -43,7 +43,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
         appearance={theme}
         accentColor={AccentColor}
         grayColor={GrayColor}
-        scaling="90%"
+        scaling="110%"
       >
         {children}
       </Theme>

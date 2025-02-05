@@ -1,10 +1,9 @@
 "use client";
 
-import { Button, Box, Flex } from "@radix-ui/themes";
+import { Box, Flex, Link, SegmentedControl } from "@radix-ui/themes";
 import { ExternalLinkIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons";
-import Link from "next/link";
+import NextLink from "next/link";
 import { useTheme } from "@/contexts/useTheme";
-import { H6 } from "../Headings";
 
 export const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
@@ -14,33 +13,55 @@ export const Navbar = () => {
       py="8"
       className="flex items-center justify-between bg-black text-white"
     >
-      <Flex gap="4" align="center" justify="end" className="hidden md:flex">
-        <Link href="/">
-          <H6>Home</H6>
-        </Link>
-        <Link href="/about">
-          <H6>About</H6>
-        </Link>
-        <Link href="/Projects">
-          <H6>Projects</H6>
-        </Link>
-        <Link href="https://linkedin.com/in/windstonp" target="_blank">
-          <H6>
-            Linkedin
-            <ExternalLinkIcon style={{ marginLeft: 10 }} />
-          </H6>
-        </Link>
-        <Link href="https://github.com/windstonp" target="_blank">
-          <H6>
-            GitHub
-            <ExternalLinkIcon style={{ marginLeft: 10 }} />
-          </H6>
-        </Link>
+      <menu>
+        <nav>
+          <Flex gap="4" align="center" justify="end" className="hidden md:flex">
+            <NextLink href="/" legacyBehavior passHref>
+              <Link>Home</Link>
+            </NextLink>
+            <NextLink href="/about" legacyBehavior passHref>
+              <Link>About</Link>
+            </NextLink>
+            <NextLink href="/projects" legacyBehavior passHref>
+              <Link>Projects</Link>
+            </NextLink>
+            <NextLink
+              href="https://linkedin.com/in/windstonp"
+              legacyBehavior
+              passHref
+            >
+              <Link target="_blank">
+                Linkedin
+                <ExternalLinkIcon style={{ marginLeft: 10 }} />
+              </Link>
+            </NextLink>
 
-        <Button variant="soft" size="3" onClick={toggleTheme}>
-          {theme === "light" ? <MoonIcon /> : <SunIcon />}
-        </Button>
-      </Flex>
+            <NextLink
+              href="https://github.com/windstonp"
+              legacyBehavior
+              passHref
+            >
+              <Link target="_blank">
+                Github
+                <ExternalLinkIcon style={{ marginLeft: 10 }} />
+              </Link>
+            </NextLink>
+
+            <SegmentedControl.Root value={theme} defaultValue={theme}>
+              <SegmentedControl.Item value="light" onClick={toggleTheme}>
+                <div style={{ alignItems: "center", display: "flex" }}>
+                  <SunIcon />
+                </div>
+              </SegmentedControl.Item>
+              <SegmentedControl.Item value="dark" onClick={toggleTheme}>
+                <div style={{ alignItems: "center", display: "flex" }}>
+                  <MoonIcon />
+                </div>
+              </SegmentedControl.Item>
+            </SegmentedControl.Root>
+          </Flex>
+        </nav>
+      </menu>
     </Box>
   );
 };
