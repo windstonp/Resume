@@ -1,23 +1,17 @@
 "use client";
-
+import { Box, Card, Flex, Theme } from "@radix-ui/themes";
 import {
-  Box,
-  Card,
-  Flex,
-  Link,
-  SegmentedControl,
-  Theme,
-} from "@radix-ui/themes";
-import { ExternalLinkIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons";
-import NextLink from "next/link";
-import { useTheme } from "@/contexts/useTheme";
+  ExternalLinkIcon,
+  HamburgerMenuIcon,
+  Cross1Icon,
+} from "@radix-ui/react-icons";
 
 import styles from "./style.module.css";
 import { useState } from "react";
-import { HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons";
+import { SwitchThemeComponent } from "../SwitchThemeComponent";
+import { LinkComponent } from "../LinkComponent";
 
 export const Navbar = () => {
-  const { theme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -25,49 +19,23 @@ export const Navbar = () => {
       <menu>
         <nav className={styles.menuDesktop}>
           <Flex gap="4" align="center" justify="end">
-            <NextLink href="/" legacyBehavior passHref>
-              <Link>Home</Link>
-            </NextLink>
-            <NextLink href="/about" legacyBehavior passHref>
-              <Link>About</Link>
-            </NextLink>
-            <NextLink href="/projects" legacyBehavior passHref>
-              <Link>Projects</Link>
-            </NextLink>
-            <NextLink
+            <LinkComponent href="/">Home</LinkComponent>
+            <LinkComponent href="/about">About</LinkComponent>
+            <LinkComponent href="/projects">Projects</LinkComponent>
+
+            <LinkComponent
               href="https://linkedin.com/in/windstonp"
-              legacyBehavior
-              passHref
+              target="_blank"
             >
-              <Link target="_blank">
-                Linkedin
-                <ExternalLinkIcon style={{ marginLeft: 10 }} />
-              </Link>
-            </NextLink>
+              Linkedin
+              <ExternalLinkIcon style={{ marginLeft: 10 }} />
+            </LinkComponent>
 
-            <NextLink
-              href="https://github.com/windstonp"
-              legacyBehavior
-              passHref
-            >
-              <Link target="_blank">
-                Github
-                <ExternalLinkIcon style={{ marginLeft: 10 }} />
-              </Link>
-            </NextLink>
-
-            <SegmentedControl.Root value={theme} defaultValue={theme}>
-              <SegmentedControl.Item value="light" onClick={toggleTheme}>
-                <div style={{ alignItems: "center", display: "flex" }}>
-                  <SunIcon />
-                </div>
-              </SegmentedControl.Item>
-              <SegmentedControl.Item value="dark" onClick={toggleTheme}>
-                <div style={{ alignItems: "center", display: "flex" }}>
-                  <MoonIcon />
-                </div>
-              </SegmentedControl.Item>
-            </SegmentedControl.Root>
+            <LinkComponent href="https://github.com/windstonp" target="_blank">
+              Github
+              <ExternalLinkIcon style={{ marginLeft: 10 }} />
+            </LinkComponent>
+            <SwitchThemeComponent />
           </Flex>
         </nav>
         <Theme radius="none" panelBackground="solid">
@@ -80,22 +48,7 @@ export const Navbar = () => {
             </button>
 
             <Card className={`${styles.menu} ${isOpen ? styles.open : ""}`}>
-              <SegmentedControl.Root
-                className={styles.switchTheme}
-                value={theme}
-                defaultValue={theme}
-              >
-                <SegmentedControl.Item value="light" onClick={toggleTheme}>
-                  <div style={{ alignItems: "center", display: "flex" }}>
-                    <SunIcon />
-                  </div>
-                </SegmentedControl.Item>
-                <SegmentedControl.Item value="dark" onClick={toggleTheme}>
-                  <div style={{ alignItems: "center", display: "flex" }}>
-                    <MoonIcon />
-                  </div>
-                </SegmentedControl.Item>
-              </SegmentedControl.Root>
+              <SwitchThemeComponent className={styles.switchTheme} />
               <button
                 className={styles.closeButton}
                 onClick={() => setIsOpen(false)}
@@ -105,45 +58,42 @@ export const Navbar = () => {
 
               <Flex gap="4" direction="column">
                 <Box>
-                  <NextLink href="/" legacyBehavior passHref>
-                    <Link>Home</Link>
-                  </NextLink>
+                  <LinkComponent href="/" onClick={() => setIsOpen(false)}>
+                    Home
+                  </LinkComponent>
                 </Box>
                 <Box>
-                  <NextLink href="/about" legacyBehavior passHref>
-                    <Link>About</Link>
-                  </NextLink>
+                  <LinkComponent href="/about" onClick={() => setIsOpen(false)}>
+                    About
+                  </LinkComponent>
                 </Box>
 
                 <Box>
-                  <NextLink href="/projects" legacyBehavior passHref>
-                    <Link>Projects</Link>
-                  </NextLink>
+                  <LinkComponent
+                    href="/projects"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Projects
+                  </LinkComponent>
                 </Box>
                 <Box>
-                  <NextLink
+                  <LinkComponent
                     href="https://linkedin.com/in/windstonp"
-                    legacyBehavior
-                    passHref
+                    target="_blank"
                   >
-                    <Link target="_blank">
-                      Linkedin
-                      <ExternalLinkIcon style={{ marginLeft: 10 }} />
-                    </Link>
-                  </NextLink>
+                    Linkedin
+                    <ExternalLinkIcon style={{ marginLeft: 10 }} />
+                  </LinkComponent>
                 </Box>
 
                 <Box>
-                  <NextLink
+                  <LinkComponent
                     href="https://github.com/windstonp"
-                    legacyBehavior
-                    passHref
+                    target="_blank"
                   >
-                    <Link target="_blank">
-                      Github
-                      <ExternalLinkIcon style={{ marginLeft: 10 }} />
-                    </Link>
-                  </NextLink>
+                    Github
+                    <ExternalLinkIcon style={{ marginLeft: 10 }} />
+                  </LinkComponent>
                 </Box>
               </Flex>
             </Card>
