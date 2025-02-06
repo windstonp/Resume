@@ -9,12 +9,12 @@ export function Footer() {
       <Separator size="4" />
 
       <footer>
-        <Flex justify="between" align="stretch">
+        <Flex justify="between" align="stretch" wrap="wrap">
           <Grid columns="1" p="3">
             <P>© {date} João Vitor Assunção Alves</P>
             <menu>
               <Section size="1">
-                <Flex justify="start" gap="3">
+                <Flex gap="3" wrap="wrap">
                   <NextLink href="/" legacyBehavior passHref>
                     <Link>
                       <Span>Home</Span>
@@ -54,14 +54,16 @@ export function Footer() {
               </Section>
             </menu>
           </Grid>
-          <Grid columns="1" p="3">
-            <NextLink href="/#" passHref legacyBehavior>
-              <Link underline="none">
-                <H4>
-                  Go back to top <ArrowUpIcon scale="4" />
-                </H4>
-              </Link>
-            </NextLink>
+          <Grid columns="1" p="3" justify="center">
+            <Section size="1">
+              <NextLink href="/#" passHref legacyBehavior>
+                <Link underline="none">
+                  <H4>
+                    Go back to top <ArrowUpIcon scale="4" />
+                  </H4>
+                </Link>
+              </NextLink>
+            </Section>
           </Grid>
         </Flex>
       </footer>

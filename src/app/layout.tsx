@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "@radix-ui/themes/styles.css";
 import { ThemeProvider } from "@/contexts/useTheme";
-import { Container } from "@radix-ui/themes";
+import { Container, ThemePanel } from "@radix-ui/themes";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/Footer";
 
@@ -25,6 +25,7 @@ export default function RootLayout({
             {children}
             <Footer />
           </Container>
+          <ThemePanel />
         </ThemeProvider>
       </body>
     </html>

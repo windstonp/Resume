@@ -1,4 +1,4 @@
-import { H1, H3, P, Span } from "@/components/Headings";
+import { H1, H2, P, Span } from "@/components/Headings";
 import {
   Box,
   Button,
@@ -57,7 +57,7 @@ export default function Home() {
 
       <Section size="1">
         <Grid columns="1" gap="4">
-          <H3>Need a Developer to give life to your ideas?</H3>
+          <H2>Need a Developer to give life to your ideas?</H2>
           <P>
             If you like my work or just want to reach out, feel free to drop me
             a message. I’ll do my best to respond promptly!
